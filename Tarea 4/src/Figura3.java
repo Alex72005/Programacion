@@ -7,7 +7,7 @@ public class Figura3 {
                 }
             }
             System.out.println(" ");
-       }
+       } 
     }
     
 }
