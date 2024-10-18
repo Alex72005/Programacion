@@ -1,3 +1,4 @@
+package Bucles;
 public class edad {
     public static void main(String[] args) throws Exception {
         int edad = 5;

@@ -1,3 +1,4 @@
+package Bucles;
 public class seriesNumericas {
     public static void main(String[] args) throws Exception {
         /*serie numerica sumando de 2 en 2
