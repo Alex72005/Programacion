@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class ejj2 {
+public class ej2 {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         double peso = 0;

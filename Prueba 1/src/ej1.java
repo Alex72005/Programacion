@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class ejj1 {
+public class ej1 {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int num = 0;
