@@ -12,17 +12,18 @@ public class matriz {
         }
         */
         //3
-        /*
+        
         for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-                if (i >= j){                              // I<J *****
+                if (i <= j){                              // I<J *****
                     System.out.print("*");
                 }
             }
             System.out.println(" ");
         }
-           */
+           
         //1
+        /*
         for (int i = 0; i < 5 ;i++){
             for (int j = 0; j < 5 ;j++){
                 if (i <= j) {
@@ -32,7 +33,7 @@ public class matriz {
             System.out.println(" ");
         }
         
-
+        */
         
         
     }
