@@ -1,0 +1,18 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "U8_Arrays/sirven",
+        "U8_Arrays/Mark/src",
+        "Tarea 3/src",
+        "Tarea 2-2/src",
+        "Tarea 1/src",
+        "Prueba3/src",
+        "Prueba1/src",
+        "Tarea 4/src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}
