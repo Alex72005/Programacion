@@ -1,3 +1,4 @@
+package Funciones;
 public class functions {
     public static void main(String[] args) {
         int[] entrada = {3,4,5,2,1};
