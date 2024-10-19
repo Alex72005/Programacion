@@ -1,3 +1,4 @@
+package Tarea4.src;
 public class Figura1 {
     public static void main(String[] args) throws Exception {
         for (int i = 0; i < 9; i++){

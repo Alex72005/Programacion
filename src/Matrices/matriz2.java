@@ -2,8 +2,8 @@ package Matrices;
 public class matriz2 {
     public static void main(String[] args) {
         // 4
-        for (int i = 4; i >= 0 ;i--){
-            for (int j = 0; j < 5; j++){
+        for (int i = 9; i >= 0 ;i--){
+            for (int j = 0; j < 9; j++){
                 if (i > j) {
                     System.out.print(" ");
                 }
