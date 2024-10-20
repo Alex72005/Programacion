@@ -1,8 +1,8 @@
 package Tarea4.src;
-public class Figura8 {
+public class Figura10 {
     public static void main(String[] args) {
-        for (int i = 9; i >= 1; i--) {
-            // Imprimir espacios para alinear a la derecha
+        for (int i = 1; i <= 9; i++) {
+            // Imprimir los espacios en blanco para alinear a la derecha
             for (int j = 0; j < 9 - i; j++) {
                 System.out.print(" ");
             }
@@ -14,4 +14,5 @@ public class Figura8 {
             System.out.println();
         }
     }
+    
 }
