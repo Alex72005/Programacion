@@ -10,5 +10,6 @@ public class Main{
        c1.acelerar(50);
        c1.parar();
        System.out.println(c1);
+       System.out.println(c2);
     }
 }
