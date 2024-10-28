@@ -4,6 +4,7 @@ public class Persona {
     private String apellidos;
     private String fechaNac;
     private int edad;
+    private Dni dni;
 
     public Persona(String n, String ape, String fec, int ed){
         this.nombre = n;
@@ -44,11 +45,18 @@ public class Persona {
         this.edad = e;
     }
 
-    
+    public Dni getDni(){
+        return this.dni;
+    }
+
+    public void setDni(Dni d){
+        this.dni = d;
+    }
+
     public String toString(){
         return "Nombre " + this.nombre + 
                ", Apellidos " + this.apellidos + 
-               "y Fecha de nacimiento " + this.fechaNac; 
+               " y Fecha de nacimiento " + this.fechaNac; 
     }
 
 }
