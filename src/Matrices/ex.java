@@ -2,8 +2,8 @@ package Matrices;
 import java.util.Scanner;
 public class ex {
     public static void main(String[] args) {
-        /*Escriba un programa que pida 20 numeros enteros. Estos numeros se deben introducir en un array de 4 filas por 5 columnas. El programa mostrara las sumas 
-         parciales de filas y columnas igual que si una hoja de cálculo se tratara*/
+        /*Escriba un programa que pida 20 numeros enteros. Estos numeros se deben introducir en un array de 4 filas por 5 columnas. El programa mostrara las 
+        sumas parciales de filas y columnas igual que si una hoja de cálculo se tratara*/
 
         Scanner sc = new Scanner (System.in);
 
@@ -44,7 +44,6 @@ public class ex {
         }
         
     sc.close();
-
-    /* */
+    
     }
 }
