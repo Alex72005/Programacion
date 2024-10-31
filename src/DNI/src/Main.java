@@ -24,7 +24,7 @@ public class Main {
         // Imprimir las personas creadas
         for (Persona p : personas) {
             System.out.println(p);
-        }
+        }       
 
        
        
