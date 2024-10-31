@@ -10,6 +10,7 @@ public class App {
         int opcion = 0;
        
         do {
+
             System.out.println("1.Mostrar la sala"); 
             System.out.println("2.Reservar asiento");
             System.out.println("3.Cancelar Reserva");
@@ -61,7 +62,16 @@ public class App {
                     }
                     break;
                 case 4:
+                    boolean encontrado = false;
+                    while (!encontrado) {
+                        int filaRandom = 1;
+                        int columnaRandom = 1;
 
+                        if(matriz[filaRandom][columnaRandom] == 0){
+                            System.out.println("El asiento con fila " + filaRandom + " y columna " + columnaRandom + " está disponible");
+                            encontrado = true;
+                        }
+                    }
                     break;
 
                 case 5:                                                                                              
@@ -70,12 +80,14 @@ public class App {
                     for (int j = 0; j < matriz[i].length; j++){
                         if (matriz[i][j] == 1) {
                             contador++;
-                        }
+                        } 
                     }
                 }
                     System.out.println(contador);
                     break;
-                
+                case 6:
+
+                    break;
                 default:
                     break;
             }
