@@ -6,11 +6,12 @@ public class Persona {
     private int edad;
     private Dni dni;
 
-    public Persona(String n, String ape, String fec, int ed){
+    public Persona(String n, String ape, String fec, int ed, Dni dn){
         this.nombre = n;
         this.apellidos = ape;
         this.fechaNac = fec;
         this.edad = ed;
+        this.dni = dn;
     }
 
     public String getNombre(){
@@ -54,9 +55,10 @@ public class Persona {
     }
 
     public String toString(){
-        return "Nombre " + this.nombre + 
-               ", Apellidos " + this.apellidos + 
-               " y Fecha de nacimiento " + this.fechaNac; 
+        return "Nombre: " + this.nombre + 
+               ", Apellidos: " + this.apellidos + 
+               ", Fecha de nacimiento: " + this.fechaNac + 
+               " y su DNI:  " + this.dni;
     }
 
 }
