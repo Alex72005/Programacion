@@ -27,7 +27,6 @@ public class Dni {
     public String toString(){
         return "Dni: " + this.numeros + this.letra;
     }
-
     private char calcularLetra(){
         int numerosInt = Integer.parseInt(this.numeros);
         char[] letras = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};

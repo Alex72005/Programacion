@@ -11,14 +11,14 @@ public class Main {
         Random random = new Random();
 
         for (int i = 0; i < dnis.length; i++){
-            String numeros = " " + random.nextInt(99999999 + 1); 
+            String numeros = Integer.toString(random.nextInt(99999999 + 1)); 
             while (numeros.length() < 8) {
                 numeros = "0" + numeros; 
             }
 
             dnis[i] = new Dni(numeros);
         }
-
+        
         for (int i = 0; i < personas.length; i++) {
             String nombre = "Nombre" + (i + 1); // Nombre de ejemplo
             String apellidos = "Apellido" + (i + 1); // Apellidos de ejemplo
