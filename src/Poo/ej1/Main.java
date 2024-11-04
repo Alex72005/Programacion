@@ -1,4 +1,4 @@
-package Poo;
+package Poo.ej1;
 public class Main{
     public static void main(String[] args) {
        Coche c1 = new Coche("145BJK ","A4 " , "Audi ", "Negro ");

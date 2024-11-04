@@ -1,4 +1,4 @@
-package Poo;
+package Poo.ej1;
 public class Coche {
     private String matricula;
     private String modelo;

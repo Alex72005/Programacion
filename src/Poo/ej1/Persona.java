@@ -1,4 +1,4 @@
-package Poo;
+package Poo.ej1;
 public class Persona {
     private String nombre;
     private int edad;
