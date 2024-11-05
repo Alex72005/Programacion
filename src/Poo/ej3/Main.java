@@ -12,8 +12,11 @@ public class Main {
         c3.ingresar(4.5);
         c3.transferir(50,c4);
 
+        System.out.println(c1);
+        System.out.println(c2);
         System.out.println(c3);
         System.out.println(c4);
+        System.out.println(c5);
 
         
 
