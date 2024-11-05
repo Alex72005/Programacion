@@ -25,9 +25,14 @@ public class Reloj {
             }
         }
     }
-
+    /*
     public String toString() {
         return String.format("%02d:%02d:%02d", this.horas.getNumero(), this.minutos.getNumero(), this.segundos.getNumero());
+    }
+     */
+
+    public String toString(){
+        return this.horas + ":" + this.minutos + ":" + this.segundos;
     }
 }
     

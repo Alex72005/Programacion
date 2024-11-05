@@ -28,4 +28,9 @@ public class Contador {
     public void reset(){
         numero = 0;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%02d", this.numero);
+    }
 }
