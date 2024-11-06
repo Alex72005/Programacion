@@ -8,6 +8,7 @@ public class Coche {
     private boolean arrancado;
 
     private final static int velocidadMaxima = 120;
+    private final static int velocidadMinima = 0;
 
     public Coche(String mat,String mod,String mar,String col){
         this.matricula = mat;
@@ -51,8 +52,20 @@ public class Coche {
                 this.velocidadActual += vel;
             }
         }
+    }
+
+    public void frenar(int vel){
+        if (this.arrancado) {
+            if (this.velocidadActual - vel >= this.velocidadMinima) {
+                this.velocidadActual -= vel; 
+            }
+            else{
+                this.velocidadActual = 0;
+            }
+        }
         
     }
+
     public String toString(){
         return "Matricula: " + this.matricula + 
                "Marca: " + this.marca + 
