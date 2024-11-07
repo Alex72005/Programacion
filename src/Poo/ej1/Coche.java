@@ -56,7 +56,7 @@ public class Coche {
 
     public void frenar(int vel){
         if (this.arrancado) {
-            if (this.velocidadActual - vel >= this.velocidadMinima) {
+            if (this.velocidadActual - vel >= velocidadMinima) {
                 this.velocidadActual -= vel; 
             }
             else{
