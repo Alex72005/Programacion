@@ -29,8 +29,7 @@ public class Persona {
     public void agregarMascota(Perro p){
         this.mascotas.add(p);
     }
-
-    @Override
+ 
     public String toString() {
         return "Persona [nombre= " + nombre + ", mascotas= " + mascotas + "]";
     }
