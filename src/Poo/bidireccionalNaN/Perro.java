@@ -13,7 +13,7 @@ public class Perro {
         return this.nombre;
     }
 
-    private void setNombre(String nom){
+    public void setNombre(String nom){
         this.nombre = nom;
     }
 
