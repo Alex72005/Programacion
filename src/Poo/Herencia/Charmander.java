@@ -3,12 +3,12 @@ package Poo.Herencia;
 public class Charmander extends Pokemon {
     private int multiplicarDanyo;
 
-    public Charmander(String nombre, String tipo, int multiplicarDanyo){
-        super(nombre, tipo);
-        this.multiplicarDanyo = multiplicarDanyo;
+    public Charmander(String nombre){
+        super(nombre, "fuego");
+        this.multiplicarDanyo = 3;
     }
 
     public void atacar(Pokemon otro){
-        otro.ps = otro.ps - (100 * this.multiplicarDanyo);
+        otro.ps -= (100 * this.multiplicarDanyo);
     }
 }

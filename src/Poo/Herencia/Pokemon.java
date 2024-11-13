@@ -70,7 +70,7 @@ public class Pokemon {
         this.defendiendo = estado;
     }
 
-    
+       
 
 
     
