@@ -17,6 +17,5 @@ public class Bulbasur extends Pokemon {
         return "Bulbasur " + super.toString();
     }
 
-    
 }
 

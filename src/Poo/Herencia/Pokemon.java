@@ -62,7 +62,10 @@ public class Pokemon {
 
     public void atacar(Pokemon otro){
         if (!otro.defendiendo) {
-            otro.ps = otro.ps - 100;
+            otro.ps -= 100;
+        }
+        else{
+            otro.ps -= 50;
         }
     }
 
