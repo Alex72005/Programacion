@@ -10,11 +10,23 @@ public class Charmander extends Pokemon {
 
     @Override
     public void atacar(Pokemon otro){
-        otro.ps -= (100 * this.multiplicarDanyo);
+        if (otro instanceof Squirtel) {
+            if (!otro.defendiendo) {
+                otro.ps -= (100 * multiplicarDanyo);
+            }
+            else{
+                otro.ps -= 50;
+            }
+        }
+        else{
+            otro.ps -= (100 * multiplicarDanyo);
+        }
     }
 
     @Override
     public String toString() {
         return "Charmander [multiplicarDanyo=" + multiplicarDanyo + "]" + super.toString();
     }
+
+    
 }
