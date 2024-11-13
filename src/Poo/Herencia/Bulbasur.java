@@ -3,7 +3,7 @@ package Poo.Herencia;
 public class Bulbasur extends Pokemon {
 
     public Bulbasur(String nombre){
-        super(nombre,"planta");
+        super(nombre,"tipo");
     }
 
     
@@ -19,3 +19,4 @@ public class Bulbasur extends Pokemon {
 
     
 }
+
