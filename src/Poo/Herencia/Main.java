@@ -13,6 +13,7 @@ public class Main {
        
         c1.atacar(b1);
         System.out.println(b1);
+        System.out.println(s1);
 
     }
 }
