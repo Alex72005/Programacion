@@ -1,4 +1,4 @@
-package Poo.Banco;
+package Tarea5.src.Asociacion;
 
 public class Cliente {
     private String nombre;
