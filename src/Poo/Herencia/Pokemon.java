@@ -72,9 +72,5 @@ public class Pokemon {
     public void defender(boolean estado){
         this.defendiendo = estado;
     }
-
-       
-
-
-    
 }
+
