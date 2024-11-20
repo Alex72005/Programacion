@@ -57,6 +57,4 @@ public class Empleado {
                ", edad: " + this.edad + 
                " y salario: " + this.salario;
     }
-
-
 }
