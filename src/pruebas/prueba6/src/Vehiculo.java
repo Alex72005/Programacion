@@ -10,7 +10,6 @@ public class Vehiculo{
     public Vehiculo(){
         this.matricula = "";
         this.estaAlquilado = false;
-        this.fecha = null;
     }
 
     public Vehiculo(String m) {
@@ -52,7 +51,7 @@ public class Vehiculo{
            System.out.println("Error");
         }
     }
-
+    
     public void devolver(){
         if (estaAlquilado) {
             this.estaAlquilado = false;

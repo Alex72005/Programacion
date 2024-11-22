@@ -3,11 +3,13 @@ package pruebas.prueba6.src;
 public class Autobus extends Vehiculo{
     private double precioKilometro;
     private double kilometrosInicio;
-    private double KilometrosFin;
+    private double kilometrosFin;
 
     public Autobus(){
         super();
         this.precioKilometro = 0;
+        this.kilometrosInicio = 0;
+        this.kilometrosFin = 0;
     }
 
     public Autobus(String m, double p){
@@ -37,34 +39,31 @@ public class Autobus extends Vehiculo{
     }
 
     public double getKilometrosFin() {
-        return this.KilometrosFin;
+        return this.kilometrosFin;
     }
 
     public void setKilometrosFin(double fin) {
-        KilometrosFin = fin;
+        this.kilometrosFin = fin;
     }
-
-
-    @Override
-    public void alquilar(){
+ 
+    public void alquilar(double ki){
         super.alquilar();
-        this.kilometrosInicio = 60;
+        this.kilometrosInicio = ki;
     }
 
-    @Override
-    public void devolver(){
+    public void devolver(double kf){
         super.devolver();
-        this.KilometrosFin = 200;
+        this.kilometrosFin = kf;
     }
 
     public double calcularPrecio(){
-        return (this.KilometrosFin - this.kilometrosInicio) * this.precioKilometro;
+        return (this.kilometrosFin - this.kilometrosInicio) * this.precioKilometro;
     }
 
     @Override
     public String toString() {
-        return super.toString()+ "Autobus [precioKilometro=" + precioKilometro + ", kilometrosInicio=" + kilometrosInicio
-                + ", KilometrosFin=" + KilometrosFin + "]";
+        return super.toString()+ "Autobus [precioKilometro=" + this.precioKilometro + ", kilometrosInicio=" + this.kilometrosInicio
+                + ", KilometrosFin=" + this.kilometrosFin + "]";
     }
 
     

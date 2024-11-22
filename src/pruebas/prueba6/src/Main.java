@@ -10,7 +10,7 @@ public class Main {
         autobus.setSiEstaAlquilado(true);
         tractor.setSiEstaAlquilado(true);
 
-        int option;
+        int option = 0;
 
         do {
             Scanner sc = new Scanner(System.in);
@@ -21,10 +21,10 @@ public class Main {
             option = sc.nextInt();
             switch (option) {
                 case 1:
-                    autobus.alquilar();
-                       break;
+                    autobus.alquilar(60);
+                    break;
                 case 2:
-                    autobus.devolver();
+                    autobus.devolver(120);
                     System.out.println(autobus.calcularPrecio());
                     break;
                 case 3:
@@ -37,8 +37,7 @@ public class Main {
                 default:
                     break;
             }
-            
-        } while (option > 0);
+        } while (option > 0); 
     }
 }
 

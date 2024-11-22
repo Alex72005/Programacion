@@ -1,6 +1,7 @@
 package pruebas.prueba6.src;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 
 public class Tractor extends Vehiculo{
@@ -11,6 +12,8 @@ public class Tractor extends Vehiculo{
     public Tractor() {
         super();
         this.precioDia = 1; 
+        this.fechaInicio = null;
+        this.fechaFin = null;
     }
 
     public Tractor(String m, double p) {
@@ -60,8 +63,9 @@ public class Tractor extends Vehiculo{
     }
 
     public double calcularPrecio(){
-        int dias = 3;
-        return dias * precioDia;
+        this.fechaInicio = LocalDateTime.now();
+        int dias = (int)ChronoUnit.DAYS.between(this.fechaInicio, this.fechaFin);
+        return dias * this.precioDia;
     }
 
     @Override
