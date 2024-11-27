@@ -2,7 +2,7 @@ package recursividad;
 
 public class torresDeHanoi {
     public static void main(String[] args) {
-        torres(5, 'A', 'C', 'B');
+        torres(4, 'A', 'C', 'B');
     }
 
     public static void torres(int n, char origen, char destino, char auxiliar){
