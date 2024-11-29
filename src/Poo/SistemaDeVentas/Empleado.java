@@ -16,7 +16,7 @@ public class Empleado {
         this.edad = e;
         this.salario = s;
     }
-
+    
     public Empleado(Empleado copia){
         this.nombre = copia.nombre;
         this.edad = copia.edad;

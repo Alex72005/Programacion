@@ -17,7 +17,7 @@ public class Triangulo extends Figura {
     }
 
     public Triangulo(Triangulo t){
-        super();
+        super(t);
     }
 
     public double getBase() {
