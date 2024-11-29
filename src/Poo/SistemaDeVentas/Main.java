@@ -18,7 +18,7 @@ public class Main {
         for (int i = 0; i < empleados.size(); i++) {
             Empleado emp = empleados.get(i);
             System.out.println(emp.toString() + ", bonificacion: " + emp.calcularBonificacion());
-            
+             
             if (emp instanceof Gerente gerente) {
                 gerente.dirigirReunion();
             }
