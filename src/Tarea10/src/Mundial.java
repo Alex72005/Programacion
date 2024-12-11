@@ -66,7 +66,7 @@ public class Mundial {
     }
 
     public SeleccionFutbol getSeleccion(int id){
-        SeleccionFutbol s;
+        SeleccionFutbol s = null;
         for (int i = 0; i < selecciones.size(); i++) {
             if (id == selecciones.get(i).getId()) {
                 s = selecciones.get(i);
