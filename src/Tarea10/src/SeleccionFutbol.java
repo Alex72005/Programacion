@@ -35,7 +35,7 @@ public class SeleccionFutbol {
         this.nombre = nom;
     }
 
-
+    
 
     
 

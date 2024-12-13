@@ -76,6 +76,12 @@ public class Mundial {
         return s;
     }
 
+    public void listarSelecciones(){
+        for (int i = 0; i < selecciones.size(); i++) {
+            System.out.println(selecciones.get(i));
+        }
+    }
+
     @Override
     public String toString() {
         return "Mundial [id=" + id + ", anyo=" + anyo + "]";

@@ -12,6 +12,6 @@ public class App {
         }
         */
 
-        System.out.println(mundial2022.getSeleccion(5));
+        mundial2022.listarSelecciones();
     }
 }
