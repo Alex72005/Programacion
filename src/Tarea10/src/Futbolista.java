@@ -38,8 +38,25 @@ public class Futbolista extends Persona {
         this.demarcacion = dem;
     }
 
+    public void viajar(){
+        System.out.println("Viajando el futbolista");
+    }
+
+    public boolean tieneSobrepeso(){
+        double imc = super.peso / (super.altura * super.altura);
+        if (imc >= 22) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void jugarPartido(){
+        System.out.println("El futbolista" + getNombre() + "está jugando el partido");
+    }
+
     @Override
     public String toString() {
-        return "Futbolista [dorsal=" + dorsal + ", demarcacion=" + demarcacion + super.toString() + "]" ;
+        return "Futbolista [dorsal=" + dorsal + ", demarcacion=" + demarcacion + " " + super.toString() + "]" ;
     }
 }

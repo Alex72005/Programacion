@@ -26,6 +26,23 @@ public class Entrenador extends Persona {
         this.idFederacion = idF;
     }
 
+    public void viajar(){
+        System.out.println("Viajando el entrenador");
+    }
+
+    public boolean tieneSobrepeso(){
+        double imc = super.peso / (super.altura * super.altura);
+        if (imc >= 25) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void entrenar(){
+        System.out.println("El entrenador " + getNombre() + " " + getApellidos() + "está entrenando");
+    }
+
     @Override
     public String toString() {
         return "Entrenador [idFederacion=" + idFederacion + super.toString() + "]";

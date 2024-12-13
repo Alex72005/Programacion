@@ -83,6 +83,7 @@ abstract class Persona {
         this.altura = alt;
     }
 
+    public abstract void viajar();
 
 
 
