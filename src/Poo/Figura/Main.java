@@ -1,12 +1,13 @@
 package Poo.Figura;
 
-import java.util.ArrayList;
+/*import java.util.ArrayList;*/
 
 public class Main {
     public static void main(String[] args) {
         Cuadrado c1 = new Cuadrado("blanco",2,4);
         Triangulo t1 = new Triangulo(2,2);
 
+        System.out.println(c1.calcularArea());
         System.out.println(t1.calcularArea());
 
         /* 

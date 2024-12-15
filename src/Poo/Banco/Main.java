@@ -5,6 +5,7 @@ public class Main {
         Cliente d1 = new Cliente("Alejandro", "Santos");
         CtaCte c1 = new CtaCte(5000, d1);
 
+        System.out.println(c1);
         System.out.println(d1);
     }
 }
