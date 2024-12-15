@@ -27,7 +27,7 @@ public class Entrenador extends Persona {
     }
 
     public void viajar(){
-        System.out.println("Viajando el entrenador");
+        System.out.println("El entrenador " + getNombre() + getApellidos() + " está viajando");
     }
 
     public boolean tieneSobrepeso(){

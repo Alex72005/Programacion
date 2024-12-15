@@ -39,7 +39,7 @@ public class Futbolista extends Persona {
     }
 
     public void viajar(){
-        System.out.println("Viajando el futbolista");
+        System.out.println("El futbolista " + getNombre() + " " + getApellidos() + " está viajando");
     }
 
     public boolean tieneSobrepeso(){
@@ -52,7 +52,7 @@ public class Futbolista extends Persona {
     }
 
     public void jugarPartido(){
-        System.out.println("El futbolista" + getNombre() + "está jugando el partido");
+        System.out.println("El futbolista" + getNombre() + " " + getApellidos() + "está jugando el partido");
     }
 
     @Override

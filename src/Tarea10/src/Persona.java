@@ -85,11 +85,6 @@ abstract class Persona {
 
     public abstract void viajar();
 
-
-
-
-
-    
     @Override
     public String toString() {
         return "Persona [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fechaNac=" + fechaNac
