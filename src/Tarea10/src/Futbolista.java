@@ -1,6 +1,6 @@
 package Tarea10.src;
 
-public class Futbolista extends Persona {
+public class Futbolista extends Persona implements Deportista {
     private int dorsal;
     private String demarcacion;
 
@@ -38,21 +38,25 @@ public class Futbolista extends Persona {
         this.demarcacion = dem;
     }
 
+    @Override
     public void viajar(){
         System.out.println("El futbolista " + getNombre() + " " + getApellidos() + " está viajando");
     }
 
+    @Override
     public boolean tieneSobrepeso(){
         double imc = super.peso / (super.altura * super.altura);
-        if (imc >= 22) {
-            return true;
-        }
-
-        return false;
+        return imc >= 22;
     }
 
+    @Override
     public void jugarPartido(){
         System.out.println("El futbolista" + getNombre() + " " + getApellidos() + "está jugando el partido");
+    }
+
+    @Override
+    public void entrenar(){
+        System.out.println("El futbolista" + getNombre() + " " + getApellidos() + "está entrenando");
     }
 
     @Override

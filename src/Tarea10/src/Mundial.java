@@ -5,21 +5,25 @@ import java.util.ArrayList;
 public class Mundial {
     private int id;
     private int anyo;
-    public ArrayList<SeleccionFutbol> selecciones = new ArrayList<>();  
+    public ArrayList<SeleccionFutbol> selecciones;  
 
     public Mundial(){
         this.id = 0;
         this.anyo = 0;
+        this.selecciones = new ArrayList<SeleccionFutbol>();
     }
 
     public Mundial(int i, int a){
         this.id = i;
         this.anyo = a;
+        this.selecciones = new ArrayList<SeleccionFutbol>();
+        
     }
 
     public Mundial(Mundial copia){
         this.id = copia.id;
         this.anyo = copia.anyo;
+        this.selecciones = new ArrayList<SeleccionFutbol>();
     }
 
     public int getId() {

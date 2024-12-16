@@ -1,6 +1,6 @@
 package Tarea10.src;
 
-abstract class Persona {
+public abstract class Persona {
     protected int id;
     protected String nombre;
     protected String apellidos;

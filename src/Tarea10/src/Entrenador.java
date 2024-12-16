@@ -1,6 +1,6 @@
 package Tarea10.src;
 
-public class Entrenador extends Persona {
+public class Entrenador extends Persona implements Deportista {
     private int idFederacion;
 
     public Entrenador(){
@@ -26,21 +26,25 @@ public class Entrenador extends Persona {
         this.idFederacion = idF;
     }
 
+    @Override
     public void viajar(){
         System.out.println("El entrenador " + getNombre() + getApellidos() + " está viajando");
     }
 
+    @Override
     public boolean tieneSobrepeso(){
         double imc = super.peso / (super.altura * super.altura);
-        if (imc >= 25) {
-            return true;
-        }
-
-        return false;
+        return imc >= 25;
     }
 
+    @Override
     public void entrenar(){
         System.out.println("El entrenador " + getNombre() + " " + getApellidos() + "está entrenando");
+    }
+
+    @Override
+    public void jugarPartido(){
+        System.out.println("El entrenador " + getNombre() + " " + getApellidos() + " está jugando ");
     }
 
     @Override

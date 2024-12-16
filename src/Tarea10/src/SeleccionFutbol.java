@@ -5,9 +5,8 @@ import java.util.ArrayList;
 public class SeleccionFutbol {
     private int id;
     private String nombre;
-    public ArrayList<Persona> personas;
-    public ArrayList<Futbolista> jugadores = new ArrayList<>(); 
-    public ArrayList<Futbolista> futbolistasSobrepeso; 
+    private ArrayList<Persona> integrantes;
+    private ArrayList<Futbolista> futbolistasSobrepeso = new ArrayList<>(); 
 
     public SeleccionFutbol() {
         this.id = 0;
@@ -17,6 +16,8 @@ public class SeleccionFutbol {
     public SeleccionFutbol(int i, String n) {
         this.id = i;
         this.nombre = n;
+        this.integrantes = new ArrayList<Persona>();
+        
     }
 
     public SeleccionFutbol(SeleccionFutbol copia) {
@@ -41,20 +42,20 @@ public class SeleccionFutbol {
     }
 
     public boolean anyadirPersona(Persona p){
-        for (int i = 0; i < personas.size(); i++) {
-            if(p.getId() == personas.get(i).getId()) {
+        for (int i = 0; i < this.integrantes.size(); i++) {
+            if(p.getId() == this.integrantes.get(i).getId()) {
                 return false;
             }
         }
 
-        personas.add(p);
+        this.integrantes.add(p);
         return true;
     }
     
     public boolean borrarPersona(int id){
-        for (int i = 0; i < personas.size(); i++) {
-            if (id == personas.get(i).getId()) {
-                personas.remove(i);
+        for (int i = 0; i < this.integrantes.size(); i++) {
+            if (id == this.integrantes.get(i).getId()) {
+                this.integrantes.remove(i);
                 return true;
             }
         }
@@ -63,20 +64,20 @@ public class SeleccionFutbol {
     }
 
     public void listarIntegrantes(){
-        for (int i = 0; i < personas.size(); i++){
-            System.out.println(personas.get(i));
+        for (int i = 0; i < this.integrantes.size(); i++){
+            System.out.println(this.integrantes.get(i));
         }
     }
 
     public void listarFutbolistasSobrepeso(){
-        for (int i = 0; i < personas.size(); i++){
-            if (personas.get(i) instanceof Futbolista && ((Futbolista)personas.get(i)).tieneSobrepeso()) {
-                futbolistasSobrepeso.add((Futbolista)personas.get(i));
+        for (int i = 0; i < this.integrantes.size(); i++){
+            if (this.integrantes.get(i) instanceof Futbolista && ((Futbolista)this.integrantes.get(i)).tieneSobrepeso()) {
+                this.futbolistasSobrepeso.add((Futbolista)this.integrantes.get(i));
             }
         }
 
-        for (int i = 0; i < futbolistasSobrepeso.size(); i++) {
-            System.out.println(futbolistasSobrepeso);
+        for (int i = 0; i < this.futbolistasSobrepeso.size(); i++) {
+            System.out.println(this.futbolistasSobrepeso.get(i));
         }
     }
 
