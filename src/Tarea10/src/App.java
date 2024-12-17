@@ -82,6 +82,7 @@ public class App {
         
         System.out.println();
 
+        System.out.println("Jugadores de la Selección Argentina con sobrepeso");
         mundial2022.getSeleccion(2).listarFutbolistasSobrepeso();
     }
 }
