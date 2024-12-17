@@ -34,6 +34,8 @@ public class App {
         Persona e24 = new Futbolista(24, "Marco", "Asensio", "1996-01-21", 70.0, 1.82, 10, "Delantero");
         Persona e25 = new Futbolista(25, "Pablo", "Sarabia", "1992-05-11", 70.0, 1.74, 22, "Delantero");
         Persona e26 = new Futbolista(26, "Álvaro", "Rodríguez", "1995-07-22", 81.0, 1.88, 24, "Defensa");
+        Persona e27 = new Entrenador(27, "Luis Enrique", "Martínez", "1970-05-08", 0.0, 1.80, 43);
+
 
         mundial2022.getSeleccion(1).anyadirPersona(e1);
         mundial2022.getSeleccion(1).anyadirPersona(e2);
@@ -61,6 +63,7 @@ public class App {
         mundial2022.getSeleccion(1).anyadirPersona(e24);
         mundial2022.getSeleccion(1).anyadirPersona(e25);
         mundial2022.getSeleccion(1).anyadirPersona(e26);
+        mundial2022.getSeleccion(1).anyadirPersona(e27);
         
         System.out.println();
 
@@ -70,10 +73,12 @@ public class App {
         Persona a1 = new Futbolista(1, "Emiliano", "Martínez", "1992-09-02", 85.0, 1.95, 23, "Portero");
         Persona a2 = new Futbolista(2, "Lionel", "Messi", "1987-06-24", 67.0, 1.69, 10, "Delantero");
         Persona a3 = new Futbolista(3, "Alexis", "Mac Allister", "1998-12-24", 72.0, 1.76, 20, "Mediocampista");
+        Persona a4 = new Entrenador(28, "Lionel", "Scaloni", "1978-05-16", 0.0, 1.76, 44);
 
         mundial2022.getSeleccion(2).anyadirPersona(a1);
         mundial2022.getSeleccion(2).anyadirPersona(a2);
         mundial2022.getSeleccion(2).anyadirPersona(a3);
+        mundial2022.getSeleccion(2).anyadirPersona(a4);
 
         System.out.println();
 

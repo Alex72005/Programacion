@@ -49,7 +49,7 @@ public class Entrenador extends Persona implements Deportista {
 
     @Override
     public String toString() {
-        return "Entrenador [idFederacion=" + idFederacion + super.toString() + "]";
-    }
+        return "Entrenador [idFederacion="+ idFederacion + " " + super.toString() + "]";
+    } 
 }
     
