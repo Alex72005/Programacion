@@ -23,7 +23,7 @@ public class Mundial {
     public Mundial(Mundial copia){
         this.id = copia.id;
         this.anyo = copia.anyo;
-        this.selecciones = new ArrayList<SeleccionFutbol>();
+        this.selecciones = copia.selecciones;
     }
 
     public int getId() {
@@ -67,14 +67,13 @@ public class Mundial {
     }
 
     public SeleccionFutbol getSeleccion(int id){
-        SeleccionFutbol s = null;
         for (int i = 0; i < selecciones.size(); i++) {
             if (id == selecciones.get(i).getId()) {
-                s = selecciones.get(i);
+                return selecciones.get(i);
             }
         }
 
-        return s;
+        return null;
     }
 
     public void listarSelecciones(){

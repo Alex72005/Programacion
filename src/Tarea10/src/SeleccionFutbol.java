@@ -6,11 +6,11 @@ public class SeleccionFutbol {
     private int id;
     private String nombre;
     private ArrayList<Persona> integrantes;
-    private ArrayList<Futbolista> futbolistasSobrepeso = new ArrayList<>(); 
 
     public SeleccionFutbol() {
         this.id = 0;
         this.nombre = "";
+        this.integrantes = new ArrayList<Persona>();
     }
     
     public SeleccionFutbol(int i, String n) {
@@ -23,6 +23,7 @@ public class SeleccionFutbol {
     public SeleccionFutbol(SeleccionFutbol copia) {
         this.id = copia.id;
         this.nombre = copia.nombre;
+        this.integrantes = copia.integrantes;
     }
 
     public int getId() {
@@ -72,12 +73,8 @@ public class SeleccionFutbol {
     public void listarFutbolistasSobrepeso(){
         for (int i = 0; i < this.integrantes.size(); i++){
             if (this.integrantes.get(i) instanceof Futbolista && ((Futbolista)this.integrantes.get(i)).tieneSobrepeso()) {
-                this.futbolistasSobrepeso.add((Futbolista)this.integrantes.get(i));
+                System.out.println(this.integrantes.get(i));
             }
-        }
-
-        for (int i = 0; i < this.futbolistasSobrepeso.size(); i++) {
-            System.out.println(this.futbolistasSobrepeso.get(i));
         }
     }
 

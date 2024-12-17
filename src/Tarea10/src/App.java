@@ -36,78 +36,52 @@ public class App {
         Persona e26 = new Futbolista(26, "Álvaro", "Rodríguez", "1995-07-22", 81.0, 1.88, 24, "Defensa");
 
         mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(2).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
-        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e2);
+        mundial2022.getSeleccion(1).anyadirPersona(e3);
+        mundial2022.getSeleccion(1).anyadirPersona(e4);
+        mundial2022.getSeleccion(1).anyadirPersona(e5);
+        mundial2022.getSeleccion(1).anyadirPersona(e6);
+        mundial2022.getSeleccion(1).anyadirPersona(e7);
+        mundial2022.getSeleccion(1).anyadirPersona(e8);
+        mundial2022.getSeleccion(1).anyadirPersona(e9);
+        mundial2022.getSeleccion(1).anyadirPersona(e10);
+        mundial2022.getSeleccion(1).anyadirPersona(e11);
+        mundial2022.getSeleccion(1).anyadirPersona(e12);
+        mundial2022.getSeleccion(1).anyadirPersona(e13);
+        mundial2022.getSeleccion(1).anyadirPersona(e14);
+        mundial2022.getSeleccion(1).anyadirPersona(e15);
+        mundial2022.getSeleccion(1).anyadirPersona(e16);
+        mundial2022.getSeleccion(1).anyadirPersona(e17);
+        mundial2022.getSeleccion(1).anyadirPersona(e18);
+        mundial2022.getSeleccion(1).anyadirPersona(e19);
+        mundial2022.getSeleccion(1).anyadirPersona(e20);
+        mundial2022.getSeleccion(1).anyadirPersona(e21);
+        mundial2022.getSeleccion(1).anyadirPersona(e22);
+        mundial2022.getSeleccion(1).anyadirPersona(e23);
+        mundial2022.getSeleccion(1).anyadirPersona(e24);
+        mundial2022.getSeleccion(1).anyadirPersona(e25);
+        mundial2022.getSeleccion(1).anyadirPersona(e26);
+        
+        System.out.println();
 
-        
+        System.out.println("Selección Española");
+        mundial2022.getSeleccion(1).listarIntegrantes();
 
-        
-        
-        
-        
-        
+        Persona a1 = new Futbolista(1, "Emiliano", "Martínez", "1992-09-02", 85.0, 1.95, 23, "Portero");
+        Persona a2 = new Futbolista(2, "Lionel", "Messi", "1987-06-24", 67.0, 1.69, 10, "Delantero");
+        Persona a3 = new Futbolista(3, "Alexis", "Mac Allister", "1998-12-24", 72.0, 1.76, 20, "Mediocampista");
 
-      
+        mundial2022.getSeleccion(2).anyadirPersona(a1);
+        mundial2022.getSeleccion(2).anyadirPersona(a2);
+        mundial2022.getSeleccion(2).anyadirPersona(a3);
 
         System.out.println();
 
-         /* Añadir jugadores argentina y mostramos */
-        argentina.jugadores.add(new Futbolista(1, "Emiliano", "Martínez", "1992-09-02", 85.0, 1.95, 23, "Portero"));
-        argentina.jugadores.add(new Futbolista(2, "Franco", "Armani", "1986-10-16", 86.0, 1.89, 1, "Portero"));
-        argentina.jugadores.add(new Futbolista(3, "Gerónimo", "Rulli", "1992-05-20", 84.0, 1.89, 12, "Portero"));
-        argentina.jugadores.add(new Futbolista(4, "Nahuel", "Molina", "1998-04-06", 70.0, 1.75, 26, "Defensa"));
-        argentina.jugadores.add(new Futbolista(5, "Cristian", "Romero", "1998-04-27", 79.0, 1.85, 13, "Defensa"));
-        argentina.jugadores.add(new Futbolista(6, "Nicolás", "Otamendi", "1988-02-12", 81.0, 1.83, 19, "Defensa"));
-        argentina.jugadores.add(new Futbolista(7, "Lisandro", "Martínez", "1998-01-18", 77.0, 1.75, 25, "Defensa"));
-        argentina.jugadores.add(new Futbolista(8, "Nicolás", "Tagliafico", "1992-08-31", 69.0, 1.72, 3, "Defensa"));
-        argentina.jugadores.add(new Futbolista(9, "Marcos", "Acuña", "1991-10-28", 72.0, 1.72, 8, "Defensa"));
-        argentina.jugadores.add(new Futbolista(10, "Rodrigo", "De Paul", "1994-05-24", 70.0, 1.80, 7, "Mediocampista"));
-        argentina.jugadores.add(new Futbolista(11, "Leandro", "Paredes", "1994-06-29", 75.0, 1.80, 5, "Mediocampista"));
-        argentina.jugadores.add(new Futbolista(12, "Enzo", "Fernández", "2001-01-17", 75.0, 1.78, 24, "Mediocampista"));
-        argentina.jugadores.add(new Futbolista(13, "Alexis", "Mac Allister", "1998-12-24", 72.0, 1.76, 20, "Mediocampista"));
-        argentina.jugadores.add(new Futbolista(14, "Lionel", "Messi", "1987-06-24", 67.0, 1.69, 10, "Delantero"));
-        argentina.jugadores.add(new Futbolista(15, "Julián", "Álvarez", "2000-01-31", 70.0, 1.70, 9, "Delantero"));
-        argentina.jugadores.add(new Futbolista(16, "Ángel", "Di María", "1988-02-14", 75.0, 1.80, 11, "Delantero"));
-        argentina.jugadores.add(new Futbolista(17, "Lautaro", "Martínez", "1997-08-22", 75.0, 1.74, 22, "Delantero"));
-        argentina.jugadores.add(new Futbolista(18, "Paulo", "Dybala", "1993-11-15", 73.0, 1.77, 21, "Delantero"));
-        argentina.jugadores.add(new Futbolista(19, "Thiago", "Almada", "2001-04-26", 63.0, 1.71, 16, "Delantero"));
-        argentina.jugadores.add(new Futbolista(20, "Gonzalo", "Montiel", "1997-01-01", 70.0, 1.75, 4, "Defensa"));
-        argentina.jugadores.add(new Futbolista(21, "Germán", "Pezzella", "1991-06-27", 78.0, 1.85, 6, "Defensa"));
-        argentina.jugadores.add(new Futbolista(22, "Juan", "Foyth", "1998-01-12", 76.0, 1.87, 2, "Defensa"));
-        argentina.jugadores.add(new Futbolista(23, "Guido", "Rodríguez", "1994-04-12", 75.0, 1.85, 18, "Mediocampista"));
-        argentina.jugadores.add(new Futbolista(24, "Exequiel", "Palacios", "1998-10-05", 71.0, 1.77, 14, "Mediocampista"));
-        argentina.jugadores.add(new Futbolista(25, "Alejandro", "Gómez", "1988-02-15", 68.0, 1.67, 17, "Delantero"));
-        argentina.jugadores.add(new Futbolista(26, "Ángel", "Correa", "1995-03-09", 70.0, 1.71, 15, "Delantero"));
-
-        for (int i = 0; i < argentina.jugadores.size(); i++) {
-            System.out.println(argentina.jugadores.get(i));
-        }
-
+        System.out.println("Selección Argentina");
+        mundial2022.getSeleccion(2).listarIntegrantes();
+        
         System.out.println();
 
-        /* Mostramos jugadores de la seleccion argentina con sobrepeso */
-        for (int i = 0; i < argentina.jugadores.size(); i++){
-            Futbolista jugador = argentina.jugadores.get(i);
-            if (jugador.tieneSobrepeso()) {
-                System.out.println(jugador);
-            }
-        }
+        mundial2022.getSeleccion(2).listarFutbolistasSobrepeso();
     }
 }
