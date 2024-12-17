@@ -19,33 +19,52 @@ public class App {
         Persona e9 = new Futbolista(9, "Gavi", "Paez", "2004-08-05", 70.0, 1.73, 9, "Centrocampista");
         Persona e10 = new Futbolista(10, "Pedri", "González", "2002-11-25", 60.0, 1.74, 10, "Centrocampista");
         Persona e11 = new Futbolista(11, "Ferran", "Torres", "2000-02-29", 77.0, 1.84, 11, "Delantero");
-        Persona e4 = new Futbolista(12, "Dani", "Olmo", "1998-05-07", 69.0, 1.79, 12, "Delantero");
-        Persona e4 = new Futbolista(13, "David", "Raya", "1995-09-15", 80.0, 1.83, 13, "Portero");
-        Persona e4 = new Futbolista(14, "José", "Gayà", "1995-05-25", 69.0, 1.72, 14, "Defensa");
-        Persona e4 = new Futbolista(15, "Rodri", "Hernández", "1996-06-22", 82.0, 1.91, 16, "Centrocampista");
-        Persona e4 = new Futbolista(16, "Jordi", "Alba", "1989-03-21", 69.0, 1.70, 18, "Defensa");
-        Persona e4 = new Futbolista(17, "Ansu", "Fati", "2002-10-31", 66.0, 1.78, 17, "Delantero");
-        Persona e4 = new Futbolista(18, "Carlos", "Soler", "1997-01-02", 76.0, 1.80, 19, "Centrocampista");
-        Persona e4 = new Futbolista(19, "Nico", "Williams", "2002-07-12", 62.0, 1.78, 12, "Delantero");
-        Persona e4 = new Futbolista(20, "Alejandro", "Balde", "2003-10-18", 66.0, 1.75, 14, "Defensa");
-        Persona e4 = new Futbolista(21, "Yeremy", "Pino", "2002-10-20", 65.0, 1.72, 21, "Delantero");
-        Persona e4 = new Futbolista(22, "Robert", "Sánchez", "1997-11-18", 90.0, 1.97, 22, "Portero");
-        Persona e4 = new Futbolista(23, "Hugo", "Guillamón", "2000-01-31", 75.0, 1.78, 15, "Defensa");
-        Persona e4 = new Futbolista(24, "Marco", "Asensio", "1996-01-21", 70.0, 1.82, 10, "Delantero");
-        Persona e4 = new Futbolista(25, "Pablo", "Sarabia", "1992-05-11", 70.0, 1.74, 22, "Delantero");
-        Persona e4 = new Futbolista(26, "Álvaro", "Rodríguez", "1995-07-22", 81.0, 1.88, 24, "Defensa");
+        Persona e12 = new Futbolista(12, "Dani", "Olmo", "1998-05-07", 69.0, 1.79, 12, "Delantero");
+        Persona e13 = new Futbolista(13, "David", "Raya", "1995-09-15", 80.0, 1.83, 13, "Portero");
+        Persona e14 = new Futbolista(14, "José", "Gayà", "1995-05-25", 69.0, 1.72, 14, "Defensa");
+        Persona e15 = new Futbolista(15, "Rodri", "Hernández", "1996-06-22", 82.0, 1.91, 16, "Centrocampista");
+        Persona e16 = new Futbolista(16, "Jordi", "Alba", "1989-03-21", 69.0, 1.70, 18, "Defensa");
+        Persona e17 = new Futbolista(17, "Ansu", "Fati", "2002-10-31", 66.0, 1.78, 17, "Delantero");
+        Persona e18 = new Futbolista(18, "Carlos", "Soler", "1997-01-02", 76.0, 1.80, 19, "Centrocampista");
+        Persona e19 = new Futbolista(19, "Nico", "Williams", "2002-07-12", 62.0, 1.78, 12, "Delantero");
+        Persona e20 = new Futbolista(20, "Alejandro", "Balde", "2003-10-18", 66.0, 1.75, 14, "Defensa");
+        Persona e21 = new Futbolista(21, "Yeremy", "Pino", "2002-10-20", 65.0, 1.72, 21, "Delantero");
+        Persona e22 = new Futbolista(22, "Robert", "Sánchez", "1997-11-18", 90.0, 1.97, 22, "Portero");
+        Persona e23 = new Futbolista(23, "Hugo", "Guillamón", "2000-01-31", 75.0, 1.78, 15, "Defensa");
+        Persona e24 = new Futbolista(24, "Marco", "Asensio", "1996-01-21", 70.0, 1.82, 10, "Delantero");
+        Persona e25 = new Futbolista(25, "Pablo", "Sarabia", "1992-05-11", 70.0, 1.74, 22, "Delantero");
+        Persona e26 = new Futbolista(26, "Álvaro", "Rodríguez", "1995-07-22", 81.0, 1.88, 24, "Defensa");
 
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(2).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
+        mundial2022.getSeleccion(1).anyadirPersona(e1);
         mundial2022.getSeleccion(1).anyadirPersona(e1);
 
         
+
+        
         
         
         
         
 
-        for (int i = 0; i < espanya.jugadores.size(); i++) {
-            System.out.println(espanya.jugadores.get(i));
-        }
+      
 
         System.out.println();
 
