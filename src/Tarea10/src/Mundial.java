@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Mundial {
     private int id;
     private int anyo;
-    public ArrayList<SeleccionFutbol> selecciones;  
+    private ArrayList<SeleccionFutbol> selecciones;  
 
     public Mundial(){
         this.id = 0;
