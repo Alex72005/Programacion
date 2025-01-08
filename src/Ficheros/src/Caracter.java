@@ -2,7 +2,7 @@ package Ficheros.src;
 
 import java.io.FileReader;
 
-public class App {
+public class Caracter {
     public static void main(String[] args) throws Exception {
 
         FileReader fr = new FileReader("src/Ficheros/prueba.txt");
