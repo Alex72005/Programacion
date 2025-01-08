@@ -1,3 +1,5 @@
+package pruebas.Prueba7.src;
+
 public class Fisioterapeuta extends Masajista {
     private int anyosExperiencia;
 

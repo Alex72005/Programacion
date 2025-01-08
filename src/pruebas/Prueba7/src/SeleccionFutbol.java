@@ -1,3 +1,5 @@
+package pruebas.Prueba7.src;
+
 import java.util.ArrayList;
 
 public class SeleccionFutbol {

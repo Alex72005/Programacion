@@ -1,3 +1,5 @@
+package pruebas.Prueba7.src;
+
 public class Entrenador extends Persona implements Deportista,Integrante {
     private int idFederacion;
 

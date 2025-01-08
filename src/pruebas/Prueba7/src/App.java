@@ -1,3 +1,5 @@
+package pruebas.Prueba7.src;
+
 public class App {
     public static void main(String[] args) throws Exception {
         Mundial mundial2022 = new Mundial(1, 2022);

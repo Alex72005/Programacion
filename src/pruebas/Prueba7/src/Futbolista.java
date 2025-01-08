@@ -1,3 +1,4 @@
+package pruebas.Prueba7.src;
 
 public class Futbolista extends Persona implements Deportista {
     private int dorsal;

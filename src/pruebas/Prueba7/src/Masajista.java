@@ -1,3 +1,5 @@
+package pruebas.Prueba7.src;
+
 public abstract class Masajista extends Persona implements Integrante {
     protected String titulacion;
 
