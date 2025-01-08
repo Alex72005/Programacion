@@ -5,7 +5,7 @@ import java.io.FileReader;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        FileReader fr = new FileReader("prueba.txt");
+        FileReader fr = new FileReader("src/Ficheros/prueba.txt");
 
         int dato = fr.read();
 
