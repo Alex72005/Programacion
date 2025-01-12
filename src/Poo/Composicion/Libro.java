@@ -38,9 +38,6 @@ public class Libro {
         return this.paginas;
     }
 
-
-    
-
     @Override
     public String toString() {
         return "Libro [titulo=" + titulo + ", isbn=" + isbn + ", paginas=" + paginas + "]";
