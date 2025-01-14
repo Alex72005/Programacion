@@ -7,8 +7,6 @@ public class SeleccionFutbol {
     private String nombre;
     private ArrayList<Persona> integrantes;
     private ArrayList<Mundial> mundiales;
-    private final static int limEntrenador = 1;
-    private final static int limFisioterapeuta = 1;
     
 
     public SeleccionFutbol() {

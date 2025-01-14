@@ -1,6 +1,5 @@
 package Tarea121.src;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
@@ -17,17 +16,12 @@ public class Ej4 {
         FileWriter fw = null;
 
         try {
-            fw = new FileWriter("personas.txt");
-
-            BufferedWriter bw = new BufferedWriter(fw);
+            fw = new FileWriter("src/Tarea121/personas.txt",true);
 
             for (int i = 0; i < nuevasPersonas.size(); i++) {
-                
-                
-                
+                fw.append(nuevasPersonas.get(i).toString() + "\n");
             }
-           
-                bw.close();
+
                 
         } catch (Exception e) {
             System.out.println("Error escribiendo el fichero " + e.toString());
