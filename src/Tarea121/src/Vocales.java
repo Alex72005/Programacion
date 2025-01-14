@@ -2,8 +2,8 @@ package Tarea121.src;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
-/*Caracter a caracter */
-public class Ej1 {
+
+public class Vocales {
     public static void main(String[] args) throws Exception {
         Persona p1 = new Persona("Alejandro", "Santos");
         Persona p2 = new Persona("Carlos", "Rodriguez");
@@ -28,7 +28,9 @@ public class Ej1 {
                 String personaString = personas.get(i).toString();
                 for (int j = 0; j < personaString.length(); j++) {
                     char caracterPersona = personaString.charAt(j);
-                    fw.write(caracterPersona);
+                    if (caracterPersona == 'a') {
+                        fw.write(caracterPersona);
+                    }
                 }
                 fw.write("\n");
             }
@@ -45,5 +47,6 @@ public class Ej1 {
                 throw new NullPointerException();
             }
         }
+    
     }
 }

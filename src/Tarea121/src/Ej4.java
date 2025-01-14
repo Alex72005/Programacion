@@ -19,7 +19,7 @@ public class Ej4 {
             fw = new FileWriter("src/Tarea121/personas.txt",true);
 
             for (int i = 0; i < nuevasPersonas.size(); i++) {
-                fw.append(nuevasPersonas.get(i).toString() + "\n");
+                fw.write(nuevasPersonas.get(i).toString() + "\n");
             }
 
                 

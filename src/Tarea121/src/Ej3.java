@@ -8,7 +8,7 @@ public class Ej3 {
         try {
             FileReader fr = new FileReader("src/Tarea121/personas.txt");
 
-            BufferedReader br = new BufferedReader(fr);
+            BufferedReader br = new BufferedReader(fr); /*para leer linea por linea */
 
             String li;
 
@@ -17,6 +17,7 @@ public class Ej3 {
             }
 
             br.close();
+            fr.close();
         } catch (Exception e) {
             System.out.println("Error escribiendo el fichero " + e.toString());
             throw new NullPointerException();

@@ -9,6 +9,16 @@ public class Persona {
         this.apellidos = a;
     }
 
+    public Persona(){
+        this.nombre = " ";
+        this.apellidos = " ";
+    }
+
+    public Persona(Persona copia){
+        this.nombre = copia.nombre;
+        this.apellidos = copia.apellidos;
+    }
+
     public String getNombre() {
         return this.nombre;
     }
