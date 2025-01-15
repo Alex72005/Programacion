@@ -1,7 +1,5 @@
 package Tarea121.src;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -33,7 +31,9 @@ public class PalabraRepetida {
 
             caracter = fr.read();
         }
-
         System.out.println("Se ha encontrado la palabra " + palabraABuscar + " " + cont + " veces" );
+
+        fr.close();
+        sc.close();
     }
 }

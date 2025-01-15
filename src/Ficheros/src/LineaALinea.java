@@ -20,7 +20,7 @@ public class LineaALinea {
         br.close();*/
 
         try{
-            FileReader fr = new FileReader("prueba.txt");
+            FileReader fr = new FileReader("src/Ficheros/ej.txt");
 
             BufferedReader br = new BufferedReader(fr);
             
