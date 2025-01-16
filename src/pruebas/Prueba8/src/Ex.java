@@ -10,9 +10,9 @@ public class Ex {
 
         int opcion = 0;
         String linea;
+        Scanner sc = new Scanner(System.in);
 
         do {
-            Scanner sc = new Scanner(System.in);
             System.out.println("1.Mostrar alumnos.txt");
             System.out.println("2.Mostrar notasPruebasPracticas.txt");
             System.out.println("3.Mostrar notasmedias.txt");
@@ -69,7 +69,43 @@ public class Ex {
                     }
                     break;
                 case 3:
+                    
 
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
                     break;
                 case 4:
                     FileReader fr3 = null;
@@ -81,7 +117,7 @@ public class Ex {
                     double notaMedia = 0;
 
                     try {
-                        fr3 = new FileReader("notasMedias.txt");
+                        fr3 = new FileReader("src/pruebas/Prueba8/notasMedias.txt");
                         br3 = new BufferedReader(fr3);
 
                         while ((linea = br3.readLine()) != null) {
@@ -109,7 +145,6 @@ public class Ex {
                         try {
                             br3.close();
                             fr3.close();
-                            sc.close();
                         } catch (Exception e) {
                             System.out.println("Error al leer el fichero " + e.getMessage());
                         }
@@ -119,5 +154,6 @@ public class Ex {
                     break;
             }
         } while (opcion > 0);
+        sc.close();
     }
 }
