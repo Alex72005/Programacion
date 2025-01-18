@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class DividirFichero {
     public static void main(String[] args) {
-        String ficheroOriginal = "fichero1.txt";
+        String ficheroOriginal = "src/Tarea121/fichero1.txt";
         String ficheroPrimeraMitad = "primeraMitad.txt";
         String ficheroSegundaMitad = "segundaMitad.txt";
 

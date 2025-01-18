@@ -18,8 +18,8 @@ public class MezclarFicheros {
 
         try {
             // Crear los BufferedReader para los dos ficheros de entrada
-            fr1 = new FileReader("fichero1.txt");
-            fr2 = new FileReader("fichero2.txt");
+            fr1 = new FileReader("src/Tarea121/fichero1.txt");
+            fr2 = new FileReader("src/Tarea121/fichero2.txt");
             br1 = new BufferedReader(fr1);
             br2 = new BufferedReader(fr2);
             fr3 = new FileWriter(ficheroResultado);
