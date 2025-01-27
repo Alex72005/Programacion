@@ -5,8 +5,6 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Ficheros.src.Caracter;
-
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
@@ -20,21 +18,19 @@ public class App {
 
         /*Parte 1: Cifrado */
         System.out.println("Introduzca la frase que desee cifrar");
-        String frase = sc.nextLine();
+        String frase = "HOLA ME LLAMO ALEX";
+
+        FileReader fr = new FileReader("cifrado.txt");
 
         System.out.println("Introduzca la clave númerica");
-        int clave = sc.nextInt();
-
-        FileWriter fw = new FileWriter("src/Tarea13/cifrado.txt");
-
-        FileReader fr = new FileReader("src/Tarea13/cifrado.txt");
-
-        int caracter = fr.read();
-
-        while (caracter != -1) {
-            if (abecedario.contains(Character.toUpperCase((char)caracter))) {
-                caracter += clave; 
+        int clave = 3;
+        
+        for (int i = 0; i < frase.length(); i++) {
+            if (abecedario.contains(frase.charAt((char)i))) {
+                int nuevo = frase.charAt(i) + 3;
+                
             }
         }
+
     }
 }
