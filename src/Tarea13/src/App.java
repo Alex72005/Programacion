@@ -8,29 +8,60 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        /*char [] abecedario = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};*/
 
-        ArrayList<Character> abecedario = new ArrayList<Character>();
+        final String abecedario = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        for (int i = 65; i < 91; i++) {
-            abecedario.add((char)i);
-        }
-
+      
         /*Parte 1: Cifrado */
         System.out.println("Introduzca la frase que desee cifrar");
         String frase = "HOLA ME LLAMO ALEX";
-
-        FileReader fr = new FileReader("cifrado.txt");
+        frase = frase.toUpperCase();
 
         System.out.println("Introduzca la clave númerica");
         int clave = 3;
+
+        String fraseCifrada = "";
         
         for (int i = 0; i < frase.length(); i++) {
-            if (abecedario.contains(frase.charAt((char)i))) {
-                int nuevo = frase.charAt(i) + 3;
-                
+            int indice = abecedario.indexOf(frase.charAt(i));
+            if (indice != -1) {
+                int posicion = (indice + clave) % abecedario.length();
+                fraseCifrada += abecedario.charAt(posicion);
+            }
+            else{
+                fraseCifrada += frase.charAt(i);
             }
         }
+
+        System.out.println(fraseCifrada);
+
+        FileWriter fw = new FileWriter("src/Tarea13/cifrado.txt");
+
+        fw.write(fraseCifrada);
+
+        fw.close();
+
+        /*Descifrado */
+
+        String fraseDescifrada = "";
+
+        for (int i = 0; i < fraseCifrada.length(); i++) {
+            int indice = abecedario.indexOf(fraseCifrada.charAt(i));
+            if (indice != -1) {
+                int posicion = (indice - clave) % abecedario.length();
+                if (posicion < 0 ) {
+                    posicion += abecedario.length();
+                }
+                fraseDescifrada += abecedario.charAt(posicion);
+            }
+            else{
+                fraseDescifrada += fraseCifrada.charAt(i);
+            }
+        }
+
+        System.out.println(fraseDescifrada);
+
+
 
     }
 }
