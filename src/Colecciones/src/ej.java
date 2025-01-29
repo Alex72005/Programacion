@@ -20,7 +20,7 @@ public class ej {
 
         Character letra = 'U';
         /*letras.remove((Character)'U');*/
-        
+        letras.remove(letra);
 
         System.out.println(letras);
     }
