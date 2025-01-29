@@ -19,7 +19,8 @@ public class ej {
         letras.remove(1);
 
         Character letra = 'U';
-        letras.remove((Character)'U');
+        /*letras.remove((Character)'U');*/
+        
 
         System.out.println(letras);
     }
