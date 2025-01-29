@@ -69,43 +69,7 @@ public class Ex {
                     }
                     break;
                 case 3:
-                    
 
-
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
                     break;
                 case 4:
                     FileReader fr3 = null;
@@ -125,7 +89,6 @@ public class Ex {
                         }
 
                         for (int i = 1; i < lineas.size(); i++) {
-                            String id = lineas.get(i).charAt(0) + "" + lineas.get(i).charAt(1);
                             nota = lineas.get(i).charAt(4) + "" + lineas.get(i).charAt(5) + "" + lineas.get(i).charAt(6);
                             notaMedia = Double.parseDouble(nota);
                             if (notaMedia > max) {
