@@ -10,10 +10,10 @@ public class Main {
         autobus.setSiEstaAlquilado(true);
         tractor.setSiEstaAlquilado(true);
 
+        Scanner sc = new Scanner(System.in);
         int option = 0;
 
         do {
-            Scanner sc = new Scanner(System.in);
             System.out.println("1.Alquilar autobus");
             System.out.println("2.Devolver autobus");
             System.out.println("3.Alquilar tractor");
@@ -38,6 +38,8 @@ public class Main {
                     break;
             }
         } while (option > 0); 
+
+        sc.close();
     }
 }
 
