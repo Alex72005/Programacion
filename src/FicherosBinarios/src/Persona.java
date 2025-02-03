@@ -3,7 +3,7 @@ package FicherosBinarios.src;
 import java.io.Serializable;
 
 public class Persona implements Serializable{
-    /*private final static long SerialVersion = 1L;*/
+    private final static long SerialVersion = 1L;
     private int id;
     private String nombre;
     private String apellidos;
