@@ -23,7 +23,7 @@ public class Ej1 {
             System.out.println("0.Salir");
 
             option = sc.nextInt();
-            
+
             switch (option) {
                 case 1:
                     agregarProducto(sc);
@@ -46,7 +46,7 @@ public class Ej1 {
             }
 
         } while (option != 0);
-       
+
         sc.close();
     }
 
@@ -223,7 +223,7 @@ public class Ej1 {
             try {
                 ois.close();
                 fis.close();
-                
+
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
