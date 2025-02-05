@@ -255,10 +255,9 @@ public class Ej1 {
         }
     }
 
-    // private static void unirFicheros(FileInputStream fis, FileOutputStream fos)
-    // throws IOException {
-    // while (fis.available() > 0) {
-    // fos.write(fis.read());
-    // }
+    // private static void unirFicheros(FileInputStream fis, FileOutputStream fos) throws IOException {
+    //     while (fis.available() > 0) {
+    //         fos.write(fis.read());
+    //     }
     // }
 }
