@@ -214,7 +214,7 @@ public class Ej1 {
                     double precio = sc.nextDouble();
                     System.out.println("Introduce la nueva cantidad");
                     int cantidad = sc.nextInt();
-                    p = new Producto(idActualizar, nombre, precio, cantidad);
+                    p = new Producto(idActualizar, nombre, precio, cantidad);  
                 }
                 productosActualizar.add(p);
             }
