@@ -28,7 +28,7 @@ public class App {
                     BufferedReader br = null;
                     ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
                     try {
-                        fr = new FileReader("alumnos.txt");
+                        fr = new FileReader("src/Pruebas/Prueba_9/alumnos.txt");
                         br = new BufferedReader(fr);
 
                         String linea;
@@ -77,7 +77,7 @@ public class App {
                                 telefono += linea.charAt(i);
                             }
 
-                            Alumno alumno = new Alumno(id, nombre1, nombre2, apellido1, apellido2, email, telefono, 0);
+                            Alumno alumno = new Alumno(id, nombre1, nombre2, apellido1, apellido2, email, telefono);
                             alumnos.add(alumno);
                         }
                     } catch (Exception e) {
@@ -97,7 +97,7 @@ public class App {
                     ObjectOutputStream oos = null;
 
                     try {
-                        fos = new FileOutputStream("alumnos.dat");
+                        fos = new FileOutputStream("src/Pruebas/Prueba_9/alumnos.dat");
 
                         for (Alumno alumno : alumnos) {
                             oos = new ObjectOutputStream(fos);
@@ -120,7 +120,7 @@ public class App {
                     ObjectInputStream ois = null;
 
                     try {
-                        fis = new FileInputStream("alumnos.dat");
+                        fis = new FileInputStream("src/Pruebas/Prueba_9/alumnos.dat");
 
                         while (fis.available() > 0) {
                             ois = new ObjectInputStream(fis);
@@ -139,23 +139,24 @@ public class App {
                         }
                     }
                     break;
+
                 case 2:
                     FileReader fr2 = null;
                     BufferedReader br2 = null;
                     ArrayList<Notas> notasAlumnos = new ArrayList<Notas>();
 
                     try {
-                        fr2 = new FileReader("notas.txt");
+                        fr2 = new FileReader("src/Pruebas/Prueba_9/notas.txt");
                         br2 = new BufferedReader(fr2);
                         String li;
 
                         String id = "";
-                        int nota1 = 0;
-                        int nota2 = 0;
-                        int nota3 = 0;
-                        int nota4 = 0;
-                        int nota5 = 0;
-                        int nota6 = 0;
+                        int nota1;
+                        int nota2;
+                        int nota3;
+                        int nota4;
+                        int nota5;
+                        int nota6;
 
                         while ((li = br2.readLine()) != null) {
                             id = "";
@@ -192,7 +193,7 @@ public class App {
                     ObjectOutputStream oos2 = null;
 
                     try {
-                        fos2 = new FileOutputStream("notas.dat");
+                        fos2 = new FileOutputStream("src/Pruebas/Prueba_9/notas.dat");
 
                         for (Notas n : notasAlumnos) {
                             oos2 = new ObjectOutputStream(fos2);
@@ -215,7 +216,7 @@ public class App {
                     ObjectInputStream ois2 = null;
 
                     try {
-                        fis2 = new FileInputStream("notas.dat");
+                        fis2 = new FileInputStream("src/Pruebas/Prueba_9/notas.dat");
 
                         while (fis2.available() > 0) {
                             ois2 = new ObjectInputStream(fis2);
@@ -237,15 +238,33 @@ public class App {
                 case 3:
                     FileInputStream fis3 = null;
                     ObjectInputStream ois3 = null;
-                    HashMap<Integer, Alumno> totalAlumnos = new HashMap<Integer, Alumno>();
+                    HashMap<Integer, AlumnoTotal> totalAlumnos = new HashMap<Integer, AlumnoTotal>();
 
                     try {
-                        fis3 = new FileInputStream("alumnos.dat");
+                        fis3 = new FileInputStream("src/Pruebas/Prueba_9/alumnos.dat");
 
                         while (fis3.available() > 0) {
                             ois3 = new ObjectInputStream(fis3);
-                            Alumno al = (Alumno) ois3.readObject();
-                            totalAlumnos.put(al.getId(), al);
+                            int id = 0;
+                            String nombre1;
+                            String nombre2;
+                            String apellido1;
+                            String apellido2;
+                            String email;
+                            String telefono;
+
+
+                            Alumno a = (Alumno)ois3.readObject();
+                            id = a.getId();
+                            nombre1 = a.getNombre1();
+                            nombre2 = a.getNombre2();
+                            apellido1 = a.getApellido1();
+                            apellido2 = a.getApellido2();
+                            email = a.getEmail();
+                            telefono = a.getTelefono();
+
+                            AlumnoTotal at = new AlumnoTotal(id, nombre1, nombre2, apellido1, apellido2, email, telefono, 0);
+                            totalAlumnos.put(at.getId(), at);
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
@@ -262,7 +281,7 @@ public class App {
                     ObjectInputStream ois4 = null;
 
                     try {
-                        fis4 = new FileInputStream("notas.dat");
+                        fis4 = new FileInputStream("src/Pruebas/Prueba_9/notas.dat");
 
                         while (fis4.available() > 0) {
                             ois4 = new ObjectInputStream(fis4);
@@ -284,10 +303,10 @@ public class App {
                             nota4 = n.getNota4();
                             nota5 = n.getNota5();
                             nota6 = n.getNota6();
-                            media = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6);
+                            media = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6) / 6;
 
                             if (totalAlumnos.containsKey(id)) {
-                                Alumno al2 = totalAlumnos.get(id);
+                                AlumnoTotal al2 = totalAlumnos.get(id);
                                 al2.setNotaMedia(media);
                             }
                         }
@@ -306,9 +325,9 @@ public class App {
                     ObjectOutputStream ois5 = null;
 
                     try {
-                        fis5 = new FileOutputStream("notasMedias.dat");
+                        fis5 = new FileOutputStream("src/Pruebas/Prueba_9/notasMedias.dat");
 
-                        for (Alumno a : totalAlumnos.values()) {
+                        for (AlumnoTotal a : totalAlumnos.values()) {
                             ois5 = new ObjectOutputStream(fis5);
                             ois5.writeObject(a);
                         }
@@ -329,17 +348,17 @@ public class App {
                     ObjectInputStream ois6 = null;
 
                     try {
-                        fis6 = new FileInputStream("notasMedias.dat");
-                        
+                        fis6 = new FileInputStream("src/Pruebas/Prueba_9/notasMedias.dat");
+
                         while (fis6.available() > 0) {
                             ois6 = new ObjectInputStream(fis6);
-                            System.out.println((Alumno)ois6.readObject());
+                            System.out.println((AlumnoTotal) ois6.readObject());
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
 
-                    finally{
+                    finally {
                         try {
                             ois6.close();
                             fis6.close();

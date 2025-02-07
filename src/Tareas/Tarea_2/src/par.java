@@ -21,13 +21,6 @@ public class par {
             System.out.println("El numero es impar");
         }
 
-
-
-
-
-
-
-
-
+        sc.close();
     }
 }

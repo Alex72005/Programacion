@@ -27,13 +27,6 @@ public class orden {
             System.out.println("Los numeros se encuentran en orden descendente");
         }
 
-
-        
-
-
-
-
-
-
+        sc.close();
     }
 }
