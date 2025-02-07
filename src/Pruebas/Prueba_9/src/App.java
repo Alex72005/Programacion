@@ -53,23 +53,23 @@ public class App {
 
                             id = Integer.parseInt(linea.charAt(0) + "" + linea.charAt(1));
 
-                            for (int i = 4; i < 11; i++) {
+                            for (int i = 4; i < 15; i++) {
                                 nombre1 += linea.charAt(i);
                             }
 
-                            for (int i = 15; i <= 24; i++) {
+                            for (int i = 15; i < 28; i++) {
                                 nombre2 += linea.charAt(i);
                             }
 
-                            for (int i = 29; i <= 38; i++) {
+                            for (int i = 29; i < 44; i++) {
                                 apellido1 += linea.charAt(i);
                             }
 
-                            for (int i = 45; i <= 54; i++) {
+                            for (int i = 45; i < 58; i++) {
                                 apellido2 += linea.charAt(i);
                             }
 
-                            for (int i = 59; i <= 85; i++) {
+                            for (int i = 59; i <= 90; i++) {
                                 email += linea.charAt(i);
                             }
 
@@ -151,12 +151,12 @@ public class App {
                         String li;
 
                         String id = "";
-                        int nota1;
-                        int nota2;
-                        int nota3;
-                        int nota4;
-                        int nota5;
-                        int nota6;
+                        double nota1;
+                        double nota2;
+                        double nota3;
+                        double nota4;
+                        double nota5;
+                        double nota6;
 
                         while ((li = br2.readLine()) != null) {
                             id = "";
@@ -168,12 +168,12 @@ public class App {
                             nota6 = 0;
 
                             id = li.charAt(0) + "" + li.charAt(1);
-                            nota1 = Integer.parseInt(li.charAt(4) + "" + li.charAt(5));
-                            nota2 = Integer.parseInt(li.charAt(8) + "" + li.charAt(9));
-                            nota3 = Integer.parseInt(li.charAt(12) + "" + li.charAt(13));
-                            nota4 = Integer.parseInt(li.charAt(16) + "" + li.charAt(17));
-                            nota5 = Integer.parseInt(li.charAt(20) + "" + li.charAt(21));
-                            nota6 = Integer.parseInt(li.charAt(24) + "" + li.charAt(25));
+                            nota1 = Double.parseDouble(li.charAt(4) + "" + li.charAt(5));
+                            nota2 = Double.parseDouble(li.charAt(8) + "" + li.charAt(9));
+                            nota3 = Double.parseDouble(li.charAt(12) + "" + li.charAt(13));
+                            nota4 = Double.parseDouble(li.charAt(16) + "" + li.charAt(17));
+                            nota5 = Double.parseDouble(li.charAt(20) + "" + li.charAt(21));
+                            nota6 = Double.parseDouble(li.charAt(24) + "" + li.charAt(25));
 
                             Notas notasAl = new Notas(id, nota1, nota2, nota3, nota4, nota5, nota6);
                             notasAlumnos.add(notasAl);
@@ -235,7 +235,9 @@ public class App {
                         }
                     }
 
+                    break;
                 case 3:
+                
                     FileInputStream fis3 = null;
                     ObjectInputStream ois3 = null;
                     HashMap<Integer, AlumnoTotal> totalAlumnos = new HashMap<Integer, AlumnoTotal>();
@@ -286,12 +288,12 @@ public class App {
                         while (fis4.available() > 0) {
                             ois4 = new ObjectInputStream(fis4);
                             int id = 0;
-                            int nota1 = 0;
-                            int nota2 = 0;
-                            int nota3 = 0;
-                            int nota4 = 0;
-                            int nota5 = 0;
-                            int nota6 = 0;
+                            double nota1 = 0;
+                            double nota2 = 0;
+                            double nota3 = 0;
+                            double nota4 = 0;
+                            double nota5 = 0;
+                            double nota6 = 0;
                             double media = 0;
 
                             Notas n = (Notas) ois4.readObject();

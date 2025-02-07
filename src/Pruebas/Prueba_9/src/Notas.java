@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 public class Notas implements Serializable{
     private String id;
-    private int nota1;
-    private int nota2;
-    private int nota3;
-    private int nota4;
-    private int nota5;
-    private int nota6;
+    private double nota1;
+    private double nota2;
+    private double nota3;
+    private double nota4;
+    private double nota5;
+    private double nota6;
 
-    public Notas(String id, int nota1, int nota2, int nota3, int nota4, int nota5, int nota6) {
+    public Notas(String id, double nota1, double nota2, double nota3, double nota4, double nota5, double nota6) {
         this.id = id;
         this.nota1 = nota1;
         this.nota2 = nota2;
@@ -29,65 +29,73 @@ public class Notas implements Serializable{
         this.id = id;
     }
 
-    public int getNota1() {
+    public double getNota1() {
         return nota1;
     }
 
-    public void setNota1(int nota1) {
+    public void setNota1(double nota1) {
         this.nota1 = nota1;
     }
 
-    public int getNota2() {
+    public double getNota2() {
         return nota2;
     }
 
-    public void setNota2(int nota2) {
+    public void setNota2(double nota2) {
         this.nota2 = nota2;
     }
 
-    public int getNota3() {
+    public double getNota3() {
         return nota3;
     }
 
-    public void setNota3(int nota3) {
+    public void setNota3(double nota3) {
         this.nota3 = nota3;
     }
 
-    public int getNota4() {
+    public double getNota4() {
         return nota4;
     }
 
-    public void setNota4(int nota4) {
+    public void setNota4(double nota4) {
         this.nota4 = nota4;
     }
 
-    public int getNota5() {
+    public double getNota5() {
         return nota5;
     }
 
-    public void setNota5(int nota5) {
+    public void setNota5(double nota5) {
         this.nota5 = nota5;
     }
 
-    public int getNota6() {
+    public double getNota6() {
         return nota6;
     }
 
-    public void setNota6(int nota6) {
+    public void setNota6(double nota6) {
         this.nota6 = nota6;
     }
 
+    
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + nota1;
-        result = prime * result + nota2;
-        result = prime * result + nota3;
-        result = prime * result + nota4;
-        result = prime * result + nota5;
-        result = prime * result + nota6;
+        long temp;
+        temp = Double.doubleToLongBits(nota1);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(nota2);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(nota3);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(nota4);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(nota5);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(nota6);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
 
@@ -105,17 +113,17 @@ public class Notas implements Serializable{
                 return false;
         } else if (!id.equals(other.id))
             return false;
-        if (nota1 != other.nota1)
+        if (Double.doubleToLongBits(nota1) != Double.doubleToLongBits(other.nota1))
             return false;
-        if (nota2 != other.nota2)
+        if (Double.doubleToLongBits(nota2) != Double.doubleToLongBits(other.nota2))
             return false;
-        if (nota3 != other.nota3)
+        if (Double.doubleToLongBits(nota3) != Double.doubleToLongBits(other.nota3))
             return false;
-        if (nota4 != other.nota4)
+        if (Double.doubleToLongBits(nota4) != Double.doubleToLongBits(other.nota4))
             return false;
-        if (nota5 != other.nota5)
+        if (Double.doubleToLongBits(nota5) != Double.doubleToLongBits(other.nota5))
             return false;
-        if (nota6 != other.nota6)
+        if (Double.doubleToLongBits(nota6) != Double.doubleToLongBits(other.nota6))
             return false;
         return true;
     }
