@@ -1,7 +1,4 @@
 package Colecciones.src;
-
-
-
 public class App {
     public static void main(String[] args) throws Exception {
         /*LinkedList <Integer> lista = new LinkedList<>();
