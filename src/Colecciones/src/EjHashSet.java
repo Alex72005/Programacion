@@ -1,10 +1,10 @@
 package Colecciones.src;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
-public class Map {
+public class EjHashSet {
     public static void main(String[] args) {
-        HashMap<Integer, Integrante> edades = new HashMap<Integer, Integrante>();
+        HashSet<Integrante> edades = new HashSet<Integrante>();
 
         Integrante i1 = new Integrante(20, "Alvaro", "Villalba");
         Integrante i2 = new Integrante(19, "Victor", "Romero");
@@ -13,17 +13,18 @@ public class Map {
         Integrante i5 = new Integrante(22, "Pablo", "Martinez");
         Integrante i6 = new Integrante(22, "Pablo", "Martinez");
 
-        edades.put(i1.getEdad(), i1);
-        edades.put(i2.getEdad(), i2);
-        edades.put(i3.getEdad(), i3);
-        edades.put(i4.getEdad(), i4);
-        edades.put(i5.getEdad(), i5);
+        edades.add(i1);
+        edades.add(i2);
+        edades.add(i3);
+        edades.add(i4);
+        edades.add(i5);
 
-        for (Integer e : edades.keySet()) {
-            System.out.println("Clave: " + e + " Valor: " + edades.get(e));
+        for (Integrante e : edades) {
+            System.out.println(e);
         }
 
         System.out.println("¿Es igual i5 a i6? " + i5.equals(i6));
+        System.out.println(i5.hashCode() == i1.hashCode());
 
     }
 }

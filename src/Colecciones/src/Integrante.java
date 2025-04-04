@@ -1,8 +1,6 @@
 package Colecciones.src;
 
-import java.util.Comparator;
-
-public class Integrante implements Comparator<Integrante>{
+public class Integrante implements Comparable<Integrante>{
     private int edad; 
     private String nombre;
     private String apellido;
@@ -71,19 +69,22 @@ public class Integrante implements Comparator<Integrante>{
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Integrante [nombre=" + nombre + ", apellido=" + apellido + "]";
-    }
-
     // @Override
     // public String toString() {
-    //     return "Integrante [edad=" + edad + ", nombre=" + nombre + ", apellido=" + apellido + "]";
+    //     return "Integrante [nombre=" + nombre + ", apellido=" + apellido + "]";
     // }
 
     @Override
-    public int compare(Integrante o1, Integrante o2) {
-        return Integer.compare(o2.getEdad(), o1.getEdad());
+    public String toString() {
+        return "Integrante [edad=" + edad + ", nombre=" + nombre + ", apellido=" + apellido + "]";
     }
+
+    //ordena de forma ascendente
+    @Override
+    public int compareTo(Integrante o) {
+        return Integer.compare(this.edad, o.edad);
+    }
+
+    
 
 }
