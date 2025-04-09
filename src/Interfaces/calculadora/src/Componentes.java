@@ -71,11 +71,11 @@ public class Componentes {
         
         //panel.add(boton);
         
-        panel.add(radio1);
+        //panel.add(radio1);
         panel.add(radio2);
-        panel.add(comboBox);
-        panel.add(scrollLista);
-        panel.add(scrollTabla);
+        // panel.add(comboBox);
+        // panel.add(scrollLista);
+        // panel.add(scrollTabla);
          
         
         frame.add(panel);
