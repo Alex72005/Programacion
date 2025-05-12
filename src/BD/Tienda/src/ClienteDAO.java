@@ -38,7 +38,7 @@ public class ClienteDAO {
 
     public void actualizar(Cliente c) throws SQLException{
         Connection con = ConexionBD.conectar(); 
-        String sql = "UPDATE Clientes SET nombre=?, apellidos=?, email=?, telefono=?";
+        String sql = "UPDATE Clientes SET nombre=?, apellidos=?, email=?, telefono=? WHERE ID=?";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setString(1, c.getNombre());
         ps.setString(2, c.getApellidos());
