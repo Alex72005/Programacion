@@ -18,9 +18,10 @@ public class ClienteDAO {
 
     public List<Cliente> listar() throws SQLException{
         List<Cliente> listaClientes = new ArrayList<Cliente>();
-        Connection con = ConexionBD.conectar(); 
-        Statement st = con.createStatement(); // Objeto para ejecutar la consulta
-        ResultSet rs = st.executeQuery("SELECT * FROM Clientes"); //La ejecuto y guardo 
+        Connection con = ConexionBD.conectar();  
+        String sql = "SELECT * FROM Clientes";
+        PreparedStatement ps = con.prepareStatement(sql); 
+        ResultSet rs = ps.executeQuery(); 
 
         while (rs.next()) {
             Cliente c = new Cliente();
