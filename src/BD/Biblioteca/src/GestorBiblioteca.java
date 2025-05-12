@@ -27,7 +27,6 @@ public class GestorBiblioteca {
                     sc.nextLine();
                     System.out.print("Género: ");
                     nuevo.setGenero(sc.nextLine());
-                    nuevo.setDisponible(true);
                     ldao.insertar(nuevo);
                     System.out.println("Cliente registrado.");
                     break;
