@@ -79,7 +79,7 @@ public class App {
                         } else {
                             System.out.println("Resultados de la búsqueda: ");
                             for (Cliente c : resultados) {
-                                System.out.println(c.getId() + ": " + c.getNombre() + " " + c.getApellidos());
+                                System.out.println(c.getId() + ": " + c.getNombre() + " " + c.getApellidos() + ", " + c.getEmail() + ", " + c.getTelefono());
                             }
                         }
                         break;
