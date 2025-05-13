@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//java "-Dfile.encoding=UTF-8" -cp "lib/mysql-connector-j-9.3.0.jar;../../../bin" BD.Tienda.src.App
+
 public class GestorBiblioteca {
     static Scanner sc = new Scanner(System.in);
     static LibroDAO ldao = new LibroDAO();
