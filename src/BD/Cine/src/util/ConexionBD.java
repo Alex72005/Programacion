@@ -3,7 +3,7 @@ package BD.Cine.src.util;
 import java.sql.*;
 
 public class ConexionBD {
-    private static final String URL = "jdbc:mysql://localhost:3306/cine";
+    private static final String URL = "jdbc:mysql://localhost:3308/cine";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 

@@ -106,7 +106,7 @@ public class ReservaDAO {
         ConexionBD.desconectar(con);
     }
 
-    public static ArrayList<Reserva> buscar(String titulo) throws SQLException {
+    public ArrayList<Reserva> buscar(String titulo) throws SQLException {
         ArrayList<Reserva> reserva = new ArrayList<Reserva>();
         Connection con = ConexionBD.conectar();
         String sql = "SELECT r.* FROM Reservas r JOIN Peliculas p ON r.ID_Pelicula = p.ID_Pelicula WHERE p.Titulo LIKE ?";  

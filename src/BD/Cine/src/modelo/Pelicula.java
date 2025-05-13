@@ -80,6 +80,6 @@ public class Pelicula {
 
     @Override
     public String toString() {
-        return "Pelicula " + this.id + ": " + this.titulo + ", " + this.genero + ", " + this.duracion;
+        return "Pelicula " + this.id + ": " + this.titulo + ", " + this.genero + ", " + this.duracion + " minutos";
     }
 }

@@ -89,10 +89,11 @@ public class GestorCine {
                 case 7:
                     System.out.println("Titulo de la pelicula");
                     String titulo = sc.nextLine();
-                    ArrayList<Reserva> reserva = ReservaDAO.buscar(titulo);
+                    ArrayList<Reserva> reserva = rdao.buscar(titulo);
                     if (reserva.isEmpty()) {
                         System.out.println("No hay reservas para ese título.");
                     } else {
+                        System.out.println("Resultados de la búsqueda: ");
                         for (Reserva r : reserva) {
                             System.out.println(r.toString());
                         }
