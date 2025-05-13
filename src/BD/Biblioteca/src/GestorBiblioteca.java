@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//java "-Dfile.encoding=UTF-8" -cp "lib/mysql-connector-j-9.3.0.jar;../../../bin" BD.Tienda.src.App
+//java "-Dfile.encoding=UTF-8" -cp "lib/mysql-connector-j-9.3.0.jar;../../../bin" BD.Biblioteca.src.GestorBiblioteca
 
 public class GestorBiblioteca {
     static Scanner sc = new Scanner(System.in);
