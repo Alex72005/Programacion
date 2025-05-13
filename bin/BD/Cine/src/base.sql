@@ -1,0 +1,28 @@
+CREATE DATABASE Cine;
+
+USE Cine;
+
+CREATE TABLE Peliculas(
+    ID_Pelicula INT AUTO_INCREMENT PRIMARY KEY,
+    Titulo VARCHAR(100) NOT NULL,
+    Genero VARCHAR(50) NOT NULL,
+    Duracion INT NOT NULL
+);
+
+CREATE TABLE Salas(
+    ID_Sala INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    Capacidad INT NOT NULL
+);
+
+CREATE TABLE Reservas(
+    ID_Reserva INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Pelicula INT NOT NULL,
+    ID_Sala INT NOT NULL,
+    Fecha DATE NOT NULL,
+    Hora TIME NOT NULL,
+    Nombre_Cliente VARCHAR(100) NOT NULL,
+    Asientos_Reservados INT NOT NULL,
+    CONSTRAINT fk_pelicula FOREIGN KEY (ID_Pelicula) REFERENCES Peliculas(ID_Pelicula) ON DELETE CASCADE,
+    CONSTRAINT fk_sala FOREIGN KEY (ID_Sala) REFERENCES Salas(ID_Sala) ON DELETE CASCADE
+);
