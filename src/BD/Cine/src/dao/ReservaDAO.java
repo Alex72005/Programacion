@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import BD.Cine.src.modelo.*;
 import BD.Cine.src.util.ConexionBD;
@@ -107,7 +106,7 @@ public class ReservaDAO {
         ConexionBD.desconectar(con);
     }
 
-    public ArrayList<Reserva> buscar(String titulo) throws SQLException {
+    public static ArrayList<Reserva> buscar(String titulo) throws SQLException {
         ArrayList<Reserva> reserva = new ArrayList<Reserva>();
         Connection con = ConexionBD.conectar();
         String sql = "SELECT r.* FROM Reservas r JOIN Peliculas p ON r.ID_Pelicula = p.ID_Pelicula WHERE p.Titulo LIKE ?";  
@@ -123,14 +122,10 @@ public class ReservaDAO {
             r.setId(rs.getInt("ID_Reserva"));
             r.setPelicula(pelicula);
             r.setSala(sala);
-            //seguir
-
-
-
-
-
-
-
+            r.setFecha(rs.getDate("Fecha"));
+            r.setHora(rs.getTime("Hora"));
+            r.setNombreCliente(rs.getString("Nombre_Cliente"));
+            r.setAsientosReservados(rs.getInt("Asientos_Reservados"));
             reserva.add(r);
         }
 
