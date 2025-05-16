@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//javac -cp "lib/mysql-connector-j-9.3.0.jar" -d ../../../bin src/*.java 
 //java "-Dfile.encoding=UTF-8" -cp "lib/mysql-connector-j-9.3.0.jar;../../../bin" BD.Biblioteca.src.GestorBiblioteca
 
 public class GestorBiblioteca {

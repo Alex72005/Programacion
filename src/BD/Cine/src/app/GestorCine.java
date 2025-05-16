@@ -11,6 +11,7 @@ import java.util.Scanner;
 import BD.Cine.src.dao.*;
 import BD.Cine.src.modelo.*;
 
+//javac -cp "lib/mysql-connector-j-9.3.0.jar" -d ../../../bin src/*.java 
 //java "-Dfile.encoding=UTF-8" -cp "lib/mysql-connector-j-9.3.0.jar;../../../bin" BD.Cine.src.GestorCine
 
 public class GestorCine {
