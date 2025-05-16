@@ -1,20 +1,15 @@
 package BD.Cine.src.app;
 
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 import BD.Cine.src.dao.*;
 import BD.Cine.src.modelo.*;
-import BD.Cine.src.util.ConexionBD;
 
 //java "-Dfile.encoding=UTF-8" -cp "lib/mysql-connector-j-9.3.0.jar;../../../bin" BD.Cine.src.GestorCine
 
@@ -70,10 +65,11 @@ public class GestorCine {
                     break;
                 case 5:
                     Reserva reservaN = new Reserva();
-                    System.out.println("Película:");
-
-                    System.out.println("Sala:");
-
+                    System.out.println("ID de la Película:");
+                    int idPelicula = sc.nextInt();
+                    System.out.println("ID de la Sala:");
+                    int idSala = sc.nextInt();
+                    sc.nextLine();
                     System.out.println("Fecha (YYYY-MM-DD):");
                     reservaN.setFecha(Date.valueOf(sc.nextLine()));
                     System.out.println("Hora (HH:MM:SS):");
@@ -83,6 +79,12 @@ public class GestorCine {
                     System.out.println("Asientos reservados:");
                     reservaN.setAsientosReservados(sc.nextInt());
                     sc.nextLine();
+
+                    Pelicula peli = new Pelicula();
+                    peli.setId(idPelicula);
+                    Sala sala = new Sala();
+                    sala.setId(idSala);
+
                     rdao.insertar(reservaN);
                     System.out.println("Reserva registrada");
                     break;
@@ -281,6 +283,25 @@ public class GestorCine {
             System.out.println("No se encontraron reservas para esa película.");
         } else {
             reservas.forEach(r -> System.out.println(r));
+        }
+    }
+
+    public static void mostrarPeliculaMasReservada() {
+        String titulo = rdao.peliculaMasReservada();
+        System.out.println(titulo != null ? "Película más reservada: " + titulo : "No hay reservas.");
+    }
+
+    public static void mostrarDisponibilidadDeSala() {
+        System.out.print("ID de sala: ");
+        int idSala = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Fecha (YYYY-MM-DD): ");
+        Date fecha = Date.valueOf(sc.nextLine());
+
+        List<Time> ocupadas = rdao.obtenerHorasOcupadas(idSala, fecha);
+        System.out.println("Horas ocupadas:");
+        for (Time t : ocupadas) {
+            System.out.println(t);
         }
     }
 

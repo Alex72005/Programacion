@@ -13,7 +13,6 @@ import java.util.Map;
 
 import BD.Cine.src.modelo.*;
 import BD.Cine.src.util.ConexionBD;
-import Tareas.Tarea_2_2.src.fecha;
 
 public class ReservaDAO {
 
@@ -142,6 +141,8 @@ public class ReservaDAO {
         return reserva;
     }
 
+
+    
     // si la esta esta ocupada en ese dia y hora
     private boolean estaSalaOcupada(int idSala, Date fecha, Time hora) {
         String sql = "SELECT COUNT(*) FROM Reservas WHERE ID_Sala = ? AND Fecha = ? AND Hora = ?";
@@ -393,8 +394,8 @@ public class ReservaDAO {
         }
         return 0;
     }
-    
-    //9
+
+    // 9
     // mostrar todas las reservas con todos los datos
     public List<String> listarReservasCompletas() {
         List<String> lista = new ArrayList<>();
@@ -637,6 +638,73 @@ public class ReservaDAO {
         }
 
         return lista;
+    }
+
+    public String peliculaMasReservada() {
+        String sql = """
+                    SELECT p.Titulo
+                    FROM Reservas r
+                    JOIN Peliculas p ON r.ID_Pelicula = p.ID_Pelicula
+                    GROUP BY p.Titulo
+                    ORDER BY COUNT(*) DESC
+                    LIMIT 1
+                """;
+
+        try (Connection conn = ConexionBD.conectar();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next())
+                return rs.getString("Titulo");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // No haya reservas duplicadas
+    private boolean reservaDuplicada(Reserva r) {
+        String sql = """
+                    SELECT COUNT(*) FROM Reservas
+                    WHERE ID_Pelicula = ? AND ID_Sala = ? AND Fecha = ? AND Hora = ? AND Nombre_Cliente = ?
+                """;
+
+        try (Connection conn = ConexionBD.conectar();
+                PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, r.getPelicula().getId());
+            stmt.setInt(2, r.getSala().getId());
+            stmt.setDate(3, r.getFecha());
+            stmt.setTime(4, r.getHora());
+            stmt.setString(5, r.getNombreCliente());
+
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next())
+                return rs.getInt(1) > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    //muestra las horas ocupadas de una sala un dia
+    public List<Time> obtenerHorasOcupadas(int idSala, Date fecha) {
+        List<Time> horas = new ArrayList<>();
+        String sql = "SELECT Hora FROM Reservas WHERE ID_Sala = ? AND Fecha = ?";
+        try (Connection conn = ConexionBD.conectar();
+                PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, idSala);
+            stmt.setDate(2, fecha);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                horas.add(rs.getTime("Hora"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return horas;
     }
 
 }
