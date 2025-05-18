@@ -2,8 +2,10 @@ package Pruebas.Prueba_11.src;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ContenidoDAO {
+    static Scanner sc = new Scanner(System.in);
     public void insertar(Contenido contenido) throws SQLException {
         Connection con = ConexionBD.conectar();
         String sql = "INSERT INTO Contenido (titulo, tipo, genero, duracion_min, estreno, valoracion) VALUES (?, ?, ?, ?, ?, ?)";
@@ -61,7 +63,7 @@ public class ContenidoDAO {
         }
         return series;
     }
-
+    //
     public void actualizarTitulo(String titulo, int id) throws SQLException {
         Connection con = ConexionBD.conectar();
         String sql = "UPDATE Contenido SET titulo=? WHERE id=?";
@@ -128,6 +130,7 @@ public class ContenidoDAO {
         ConexionBD.desconectar(con);
     }
 
+    //
     public void eliminarPorID(int id) throws SQLException {
         Connection con = ConexionBD.conectar();
         String sql = "DELETE FROM Contenido WHERE id=?";

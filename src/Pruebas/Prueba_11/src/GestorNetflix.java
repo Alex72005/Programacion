@@ -27,62 +27,10 @@ public class GestorNetflix {
                     insertarContenido();
                     break;
                 case 2:
-                    ArrayList<Contenido> peliculas = cdao.listarPeliculas();
-                    ArrayList<Contenido> series = cdao.listarSeries();
-
-                    for (Contenido contenido : peliculas) {
-                        System.out.println(contenido);
-                    }
-
-                    for (Contenido contenido2 : series) {
-                        System.out.println(contenido2);
-                    }
-
+                    listar();
                     break;
                 case 3:
-                    String opcion = "hola";
-                    int id = 0;
-                    System.out.println("Dime que campo quieres actualizar");
-                    opcion = sc.nextLine();
-                    System.out.println("Dime el id del contenido que quieres actualizar");
-                    id = sc.nextInt();
-                    sc.nextLine();
-                    switch (opcion) {
-                        case "titulo":
-                            System.out.println("Dime el titulo");
-                            String titulo = sc.nextLine();
-                            cdao.actualizarTitulo(titulo, id);
-                            break;
-                        case "tipo":
-                            System.out.println("Dime el tipo");
-                            String tipo = sc.nextLine();
-                            cdao.actualizarTipo(tipo, id);
-                            break;
-                        case "genero":
-                            System.out.println("Dime el genero");
-                            String genero = sc.nextLine();
-                            cdao.actualizarGenero(genero, id);
-                            break;
-                        case "duracion_min":
-                            System.out.println("Dime la duracion en minutos");
-                            int duracion = sc.nextInt();
-                            sc.nextLine();
-                            cdao.actualizarDuracion(duracion, id);
-                            break;
-                        case "estreno":
-                            System.out.println("Dime el año del estreno");
-                            String estreno = sc.nextLine();
-                            cdao.actualizarEstreno(estreno, id);
-                            break;
-                        case "valoracion":
-                            System.out.println("Dime la valoracion");
-                            double valoracion = sc.nextDouble();
-                            sc.nextLine();
-                            cdao.actualizarValoracion(valoracion, id);
-                            break;
-                        default:
-                            break;
-                    }
+                    actualizar();
                     break;
                 case 4:
                     System.out.println("Dime 1 si quieres eliminar por id o dime 2 si quieres eliminar por titulo");
@@ -189,6 +137,66 @@ public class GestorNetflix {
         sc.nextLine();
         cdao.insertar(c);
         System.out.println("Contenido registrado");
+    }
+
+    public static ArrayList<Contenido> listar() throws SQLException {
+        ArrayList<Contenido> peliculas = cdao.listarPeliculas();
+        ArrayList<Contenido> series = cdao.listarSeries();
+        ArrayList<Contenido> total = new ArrayList<>();
+
+        for (Contenido contenido : peliculas) {
+            total.add(contenido);
+        }
+
+        for (Contenido contenido : series) {
+            total.add(contenido);
+        }
+
+        return total;
+    }
+
+    public static void actualizar() throws SQLException {
+        System.out.println("Dime que campo quieres actualizar");
+        String opcion = sc.nextLine();
+        System.out.println("Dime el id del contenido que quieres actualizar");
+        int id = sc.nextInt();
+        sc.nextLine();
+        switch (opcion) {
+            case "titulo":
+                System.out.println("Dime el titulo");
+                String titulo = sc.nextLine();
+                cdao.actualizarTitulo(titulo, id);
+                break;
+            case "tipo":
+                System.out.println("Dime el tipo");
+                String tipo = sc.nextLine();
+                cdao.actualizarTipo(tipo, id);
+                break;
+            case "genero":
+                System.out.println("Dime el genero");
+                String genero = sc.nextLine();
+                cdao.actualizarGenero(genero, id);
+                break;
+            case "duracion_min":
+                System.out.println("Dime la duracion en minutos");
+                int duracion = sc.nextInt();
+                sc.nextLine();
+                cdao.actualizarDuracion(duracion, id);
+                break;
+            case "estreno":
+                System.out.println("Dime el año del estreno");
+                String estreno = sc.nextLine();
+                cdao.actualizarEstreno(estreno, id);
+                break;
+            case "valoracion":
+                System.out.println("Dime la valoracion");
+                double valoracion = sc.nextDouble();
+                sc.nextLine();
+                cdao.actualizarValoracion(valoracion, id);
+                break;
+            default:
+                break;
+        }
     }
 
 }
