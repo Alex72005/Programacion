@@ -30,29 +30,10 @@ public class GestorNetflix {
                     listar();
                     break;
                 case 3:
-                    System.out.println("Dime el campo que quieres actualizar");
-                    String campoo = sc.nextLine();
-                    actualizar(campoo);
+                    actualizar();
                     break;
                 case 4:
-                    System.out.println("Dime 1 si quieres eliminar por id o dime 2 si quieres eliminar por titulo");
-                    int o = sc.nextInt();
-                    sc.nextLine();
-                    switch (o) {
-                        case 1:
-                            System.out.println("Dime el id del contenido que quieres eliminar");
-                            int id2 = sc.nextInt();
-                            sc.nextLine();
-                            cdao.eliminarPorID(id2);
-                            break;
-                        case 2:
-                            System.out.println("Dime el titulo del contenido que quieres eliminar");
-                            String t = sc.nextLine();
-                            cdao.eliminarPorTitulo(t);
-                            break;
-                        default:
-                            break;
-                    }
+                    eliminar();
                     break;
                 case 5:
                     ArrayList<Contenido> mPe = cdao.mejoresPeliculas();
@@ -157,10 +138,13 @@ public class GestorNetflix {
         return total;
     }
 
-    public static void actualizar(String campo) throws SQLException {       
+    public static void actualizar() throws SQLException {
         System.out.println("Dime el id");
         int id2 = sc.nextInt();
         sc.nextLine();
+
+        System.out.println("Dime el campo");
+        String campo = sc.nextLine();
         switch (campo) {
             case "titulo":
                 System.out.println("Dime el titulo");
@@ -203,7 +187,29 @@ public class GestorNetflix {
             default:
                 break;
         }
-        sc.close();
+    }
+
+    public static void eliminar() throws SQLException {
+        System.out.println("Dime 1 si quieres eliminar por id o dime 2 si quieres eliminar por titulo");
+        int o = sc.nextInt();
+        sc.nextLine();
+        switch (o) {
+            case 1:
+                System.out.println("Dime el id del contenido que quieres eliminar");
+                int id2 = sc.nextInt();
+                sc.nextLine();
+                cdao.eliminarPorID(id2);
+                System.out.println("Contenido eliminado correctamente");
+                break;
+            case 2:
+                System.out.println("Dime el titulo del contenido que quieres eliminar");
+                String t = sc.nextLine();
+                cdao.eliminarPorTitulo(t);
+                System.out.println("Contenido eliminado correctamente");
+                break;
+            default:
+                break;
+        }
     }
 
 }
