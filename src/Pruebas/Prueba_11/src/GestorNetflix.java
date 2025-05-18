@@ -30,7 +30,9 @@ public class GestorNetflix {
                     listar();
                     break;
                 case 3:
-                    actualizar();
+                    System.out.println("Dime el campo que quieres actualizar");
+                    String campoo = sc.nextLine();
+                    actualizar(campoo);
                     break;
                 case 4:
                     System.out.println("Dime 1 si quieres eliminar por id o dime 2 si quieres eliminar por titulo");
@@ -155,48 +157,53 @@ public class GestorNetflix {
         return total;
     }
 
-    public static void actualizar() throws SQLException {
-        System.out.println("Dime que campo quieres actualizar");
-        String opcion = sc.nextLine();
-        System.out.println("Dime el id del contenido que quieres actualizar");
-        int id = sc.nextInt();
+    public static void actualizar(String campo) throws SQLException {       
+        System.out.println("Dime el id");
+        int id2 = sc.nextInt();
         sc.nextLine();
-        switch (opcion) {
+        switch (campo) {
             case "titulo":
                 System.out.println("Dime el titulo");
                 String titulo = sc.nextLine();
-                cdao.actualizarTitulo(titulo, id);
+                cdao.actualizar(campo, titulo, id2);
+                System.out.println("Campo " + campo + " actualizado correctamente.");
                 break;
             case "tipo":
                 System.out.println("Dime el tipo");
                 String tipo = sc.nextLine();
-                cdao.actualizarTipo(tipo, id);
+                cdao.actualizar(campo, tipo, id2);
+                System.out.println("Campo " + campo + " actualizado correctamente.");
                 break;
             case "genero":
                 System.out.println("Dime el genero");
                 String genero = sc.nextLine();
-                cdao.actualizarGenero(genero, id);
+                cdao.actualizar(campo, genero, id2);
+                System.out.println("Campo " + campo + " actualizado correctamente.");
                 break;
             case "duracion_min":
                 System.out.println("Dime la duracion en minutos");
                 int duracion = sc.nextInt();
                 sc.nextLine();
-                cdao.actualizarDuracion(duracion, id);
+                cdao.actualizar(campo, duracion, id2);
+                System.out.println("Campo " + campo + " actualizado correctamente.");
                 break;
             case "estreno":
                 System.out.println("Dime el año del estreno");
                 String estreno = sc.nextLine();
-                cdao.actualizarEstreno(estreno, id);
+                cdao.actualizar(campo, estreno, id2);
+                System.out.println("Campo " + campo + " actualizado correctamente.");
                 break;
             case "valoracion":
                 System.out.println("Dime la valoracion");
                 double valoracion = sc.nextDouble();
                 sc.nextLine();
-                cdao.actualizarValoracion(valoracion, id);
+                cdao.actualizar(campo, valoracion, id2);
+                System.out.println("Campo " + campo + " actualizado correctamente.");
                 break;
             default:
                 break;
         }
+        sc.close();
     }
 
 }
