@@ -1,5 +1,3 @@
-package Pruebas.Prueba_11.src;
-
 public class Contenido {
     private int id;
     private String titulo;

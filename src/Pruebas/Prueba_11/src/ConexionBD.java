@@ -1,5 +1,3 @@
-package Pruebas.Prueba_11.src;
-
 import java.sql.*;
 
 public class ConexionBD {

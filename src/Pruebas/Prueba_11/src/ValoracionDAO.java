@@ -1,5 +1,3 @@
-package Pruebas.Prueba_11.src;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,49 +17,10 @@ public class ValoracionDAO {
         ConexionBD.desconectar(con);
     }
 
-    public ArrayList<Valoracion> listar() throws SQLException {
-        Connection con = ConexionBD.conectar();
-        ArrayList<Valoracion> contenidos = new ArrayList<Valoracion>();
-        String sql = "SELECT * FROM Valoracion";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-
-        while (rs.next()) {
-            Valoracion v = new Valoracion();
-            v.setId(rs.getInt("id"));
-            v.setId_contenido(rs.getInt("id_contenido"));
-            v.setNombre_usuario(rs.getString("nombre_usuario"));
-            v.setPuntuacion(rs.getInt("puntuacion"));
-            v.setComentario(rs.getString("comentario"));
-            contenidos.add(v);
-        }
-        return contenidos;
-    }
-
-    public ArrayList<Valoracion> listarPorContenido(int idContenido) throws SQLException {
-        Connection con = ConexionBD.conectar();
-        ArrayList<Valoracion> contenidos = new ArrayList<Valoracion>();
-        String sql = "SELECT * FROM Valoracion WHERE id_contenido = ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setInt(1, idContenido);
-        ResultSet rs = ps.executeQuery();
-
-        while (rs.next()) {
-            Valoracion v = new Valoracion();
-            v.setId(rs.getInt("id"));
-            v.setId_contenido(rs.getInt("id_contenido"));
-            v.setNombre_usuario(rs.getString("nombre_usuario"));
-            v.setPuntuacion(rs.getInt("puntuacion"));
-            v.setComentario(rs.getString("comentario"));
-            contenidos.add(v);
-        }
-        return contenidos;
-    }
-
     public ArrayList<Contenido> mostrarSinValoracion() throws SQLException {
         ArrayList<Contenido> sinValoracion = new ArrayList<>();
         Connection con = ConexionBD.conectar();
-        String sql = "SELECT * FROM Contenido c LEFT JOIN Valoracion v on c.id = v.id_contenido where v.id_contenido is NULL";
+        String sql = "SELECT * FROM Contenido c JOIN Valoracion v on c.id = v.id_contenido where v.id_contenido is NULL";
         PreparedStatement ps = con.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
 

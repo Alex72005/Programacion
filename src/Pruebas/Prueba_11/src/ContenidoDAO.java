@@ -1,12 +1,7 @@
-package Pruebas.Prueba_11.src;
-
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class ContenidoDAO {
-    static Scanner sc = new Scanner(System.in);
-
     public void insertar(Contenido contenido) throws SQLException {
         Connection con = ConexionBD.conectar();
         String sql = "INSERT INTO Contenido (titulo, tipo, genero, duracion_min, estreno, valoracion) VALUES (?, ?, ?, ?, ?, ?)";
@@ -65,26 +60,6 @@ public class ContenidoDAO {
         return series;
     }
 
-    public void actualizar(String campo, Object valor, int id) throws SQLException {
-        Connection con = ConexionBD.conectar();
-        String sql = "UPDATE Contenido SET " + campo + " = ? WHERE id = ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        if (valor instanceof String) {
-            ps.setString(1, (String) valor);
-        } else if (valor instanceof Integer) {
-            ps.setInt(1, (Integer) valor);
-        } else if (valor instanceof Double) {
-            ps.setDouble(1, (Double) valor);
-        } else {
-            System.out.println("Error en el tipo");
-        }
-
-        ps.setInt(2, id);
-        ps.executeUpdate();
-        ConexionBD.desconectar(con);
-    }
-
-    //
     public void actualizarTitulo(String titulo, int id) throws SQLException {
         Connection con = ConexionBD.conectar();
         String sql = "UPDATE Contenido SET titulo=? WHERE id=?";
@@ -151,7 +126,6 @@ public class ContenidoDAO {
         ConexionBD.desconectar(con);
     }
 
-    //
     public void eliminarPorID(int id) throws SQLException {
         Connection con = ConexionBD.conectar();
         String sql = "DELETE FROM Contenido WHERE id=?";
@@ -172,7 +146,7 @@ public class ContenidoDAO {
         ConexionBD.desconectar(con);
     }
 
-    public ArrayList<Contenido> mejoresPeliculas() throws SQLException {
+    public ArrayList<Contenido> mejoresPeliculas() throws SQLException{
         Connection con = ConexionBD.conectar();
         ArrayList<Contenido> co = new ArrayList<>();
         String sql = "SELECT * FROM Contenido WHERE tipo =? ORDER BY valoracion DESC LIMIT 0,3";
@@ -196,7 +170,7 @@ public class ContenidoDAO {
         return co;
     }
 
-    public ArrayList<Contenido> mejoresSeries() throws SQLException {
+    public ArrayList<Contenido> mejoresSeries() throws SQLException{
         Connection con = ConexionBD.conectar();
         ArrayList<Contenido> co = new ArrayList<>();
         String sql = "SELECT * FROM Contenido WHERE tipo =? ORDER BY valoracion DESC LIMIT 0,3";
@@ -221,12 +195,12 @@ public class ContenidoDAO {
     }
 
     public Contenido buscarPorTitulo(String titulo) throws SQLException {
-        Contenido p = new Contenido();
+        Contenido p = null;
         Connection con = ConexionBD.conectar();
         String sql = "SELECT * FROM Contenido WHERE titulo=?";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setString(1, titulo);
-        ResultSet rs = ps.executeQuery();
+        ResultSet rs = ps.executeQuery(); 
 
         if (rs.next()) {
             p = new Contenido();
@@ -236,7 +210,7 @@ public class ContenidoDAO {
             p.setGenero(rs.getString("genero"));
             p.setDuracion_min(rs.getInt("duracion_min"));
             p.setEstreno(rs.getString("estreno"));
-            p.setValoracion(rs.getDouble("valoracion"));
+            p.setValoracion(rs.getInt("valoracion"));
         }
 
         ConexionBD.desconectar(con);

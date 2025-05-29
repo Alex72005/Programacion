@@ -1,6 +1,3 @@
-package Pruebas.Prueba_11.src;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,16 +21,77 @@ public class GestorNetflix {
 
             switch (option) {
                 case 1:
-                    insertarContenido();
+                    cdao.insertar(pedirContenido());
+                    System.out.println("Contenido registrado");
                     break;
                 case 2:
-                    listar();
+                    imprimirArrayList(cdao.listarPeliculas());
+                    imprimirArrayList(cdao.listarSeries());
                     break;
                 case 3:
-                    actualizar();
+                    String opcion = "hola";
+                    int id = 0;
+                    System.out.println("Dime que campo quieres actualizar");
+                    opcion = sc.nextLine();
+                    System.out.println("Dime el id del contenido que quieres actualizar");
+                    id = sc.nextInt();
+                    sc.nextLine();
+                    switch (opcion) {
+                        case "titulo":
+                            System.out.println("Dime el titulo");
+                            String titulo = sc.nextLine();
+                            cdao.actualizarTitulo(titulo, id);
+                            break;
+                        case "tipo":
+                            System.out.println("Dime el tipo");
+                            String tipo = sc.nextLine();
+                            cdao.actualizarTipo(tipo, id);
+                            break;
+                        case "genero":
+                            System.out.println("Dime el genero");
+                            String genero = sc.nextLine();
+                            cdao.actualizarGenero(genero, id);
+                            break;
+                        case "duracion_min":
+                            System.out.println("Dime la duracion en minutos");
+                            int duracion = sc.nextInt();
+                            sc.nextLine();
+                            cdao.actualizarDuracion(duracion, id);
+                            break;
+                        case "estreno":
+                            System.out.println("Dime el año del estreno");
+                            String estreno = sc.nextLine();
+                            cdao.actualizarEstreno(estreno, id);
+                            break;
+                        case "valoracion":
+                            System.out.println("Dime la valoracion");
+                            double valoracion = sc.nextDouble();
+                            sc.nextLine();
+                            cdao.actualizarValoracion(valoracion, id);
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 4:
-                    eliminar();
+                    System.out.println("Dime 1 si quieres eliminar por id o dime 2 si quieres eliminar por titulo");
+                    int o = sc.nextInt();
+                    sc.nextLine();
+                    switch (o) {
+                        case 1:
+                            System.out.println("Dime el id del contenido que quieres eliminar");
+                            int id2 = sc.nextInt();
+                            sc.nextLine();
+                            cdao.eliminarPorID(id2);
+                            break;
+                        case 2:
+                            System.out.println("Dime el titulo del contenido que quieres eliminar");
+                            String t = sc.nextLine();
+                            cdao.eliminarPorTitulo(t);
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 5:
                     ArrayList<Contenido> mPe = cdao.mejoresPeliculas();
@@ -50,36 +108,15 @@ public class GestorNetflix {
                 case 6:
                     System.out.println("Dime el titulo del contenido que quieres buscar");
                     String tit = sc.nextLine();
-                    Contenido co = cdao.buscarPorTitulo(tit);
-                    System.out.println(co);
+                    cdao.buscarPorTitulo(tit);
                     break;
                 case 7:
-                    Valoracion v = new Valoracion();
-                    System.out.println("Id del contenido");
-                    v.setId_contenido(sc.nextInt());
-                    sc.nextLine();
-                    System.out.println("Nombre del usuario");
-                    v.setNombre_usuario(sc.nextLine());
-                    System.out.println("Puntuacion");
-                    v.setPuntuacion(sc.nextInt());
-                    sc.nextLine();
-                    System.out.println("Comentario");
-                    v.setComentario(sc.nextLine());
-                    vdao.insertar(v);
+                    vdao.insertar(pedirValoracion());
                     System.out.println("Valoracion registrada");
                     break;
                 case 8:
-                    System.out.println("Digame el id del contenido que quiera saber su validación");
-                    int id2 = sc.nextInt();
-                    sc.nextLine();
-                    ArrayList<Valoracion> valoraciones = vdao.listarPorContenido(id2);
-                    System.out.println(valoraciones);
-                    break;
-                case 9:
                     ArrayList<Contenido> s = vdao.mostrarSinValoracion();
-                    for (Contenido contenido : s) {
-                        System.out.println(contenido);
-                    }
+                    imprimirArrayList(s);
                     break;
                 default:
                     break;
@@ -97,12 +134,11 @@ public class GestorNetflix {
         System.out.println("5. Mostrar las 3 mejores peliculas y 3 mejores series");
         System.out.println("6. Buscar por titulo");
         System.out.println("7. Insertar nueva valoracion");
-        System.out.println("8. Listar Validaciones por Contenido");
-        System.out.println("9. Mostrar contenidos sin valoracion");
+        System.out.println("8. Mostrar contenidos sin valoracion");
         System.out.println("0. Salir");
     }
 
-    public static void insertarContenido() throws SQLException {
+    public static Contenido pedirContenido() {
         Contenido c = new Contenido();
         System.out.println("Titulo");
         c.setTitulo(sc.nextLine());
@@ -118,98 +154,27 @@ public class GestorNetflix {
         System.out.println("Valoracion");
         c.setValoracion(sc.nextDouble());
         sc.nextLine();
-        cdao.insertar(c);
-        System.out.println("Contenido registrado");
+        return c;
     }
 
-    public static ArrayList<Contenido> listar() throws SQLException {
-        ArrayList<Contenido> peliculas = cdao.listarPeliculas();
-        ArrayList<Contenido> series = cdao.listarSeries();
-        ArrayList<Contenido> total = new ArrayList<>();
-
-        for (Contenido contenido : peliculas) {
-            total.add(contenido);
-        }
-
-        for (Contenido contenido : series) {
-            total.add(contenido);
-        }
-
-        return total;
-    }
-
-    public static void actualizar() throws SQLException {
-        System.out.println("Dime el id");
-        int id2 = sc.nextInt();
+    public static Valoracion pedirValoracion() {
+        Valoracion v = new Valoracion();
+        System.out.println("Id del contenido");
+        v.setId_contenido(sc.nextInt());
         sc.nextLine();
-
-        System.out.println("Dime el campo");
-        String campo = sc.nextLine();
-        switch (campo) {
-            case "titulo":
-                System.out.println("Dime el titulo");
-                String titulo = sc.nextLine();
-                cdao.actualizar(campo, titulo, id2);
-                System.out.println("Campo " + campo + " actualizado correctamente.");
-                break;
-            case "tipo":
-                System.out.println("Dime el tipo");
-                String tipo = sc.nextLine();
-                cdao.actualizar(campo, tipo, id2);
-                System.out.println("Campo " + campo + " actualizado correctamente.");
-                break;
-            case "genero":
-                System.out.println("Dime el genero");
-                String genero = sc.nextLine();
-                cdao.actualizar(campo, genero, id2);
-                System.out.println("Campo " + campo + " actualizado correctamente.");
-                break;
-            case "duracion_min":
-                System.out.println("Dime la duracion en minutos");
-                int duracion = sc.nextInt();
-                sc.nextLine();
-                cdao.actualizar(campo, duracion, id2);
-                System.out.println("Campo " + campo + " actualizado correctamente.");
-                break;
-            case "estreno":
-                System.out.println("Dime el año del estreno");
-                String estreno = sc.nextLine();
-                cdao.actualizar(campo, estreno, id2);
-                System.out.println("Campo " + campo + " actualizado correctamente.");
-                break;
-            case "valoracion":
-                System.out.println("Dime la valoracion");
-                double valoracion = sc.nextDouble();
-                sc.nextLine();
-                cdao.actualizar(campo, valoracion, id2);
-                System.out.println("Campo " + campo + " actualizado correctamente.");
-                break;
-            default:
-                break;
-        }
-    }
-
-    public static void eliminar() throws SQLException {
-        System.out.println("Dime 1 si quieres eliminar por id o dime 2 si quieres eliminar por titulo");
-        int o = sc.nextInt();
+        System.out.println("Nombre del usuario");
+        v.setNombre_usuario(sc.nextLine());
+        System.out.println("Puntuacion");
+        v.setPuntuacion(sc.nextInt());
         sc.nextLine();
-        switch (o) {
-            case 1:
-                System.out.println("Dime el id del contenido que quieres eliminar");
-                int id2 = sc.nextInt();
-                sc.nextLine();
-                cdao.eliminarPorID(id2);
-                System.out.println("Contenido eliminado correctamente");
-                break;
-            case 2:
-                System.out.println("Dime el titulo del contenido que quieres eliminar");
-                String t = sc.nextLine();
-                cdao.eliminarPorTitulo(t);
-                System.out.println("Contenido eliminado correctamente");
-                break;
-            default:
-                break;
-        }
+        System.out.println("Comentario");
+        v.setComentario(sc.nextLine());
+        return v;
     }
 
+    public static void imprimirArrayList(ArrayList<Contenido> list) {
+        for (Contenido contenido : list) {
+            System.out.println(contenido);
+        }
+    }
 }
