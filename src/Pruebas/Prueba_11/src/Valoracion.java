@@ -1,3 +1,5 @@
+package Pruebas.Prueba_11.src;
+
 public class Valoracion {
     private int id;
     private int id_contenido;
