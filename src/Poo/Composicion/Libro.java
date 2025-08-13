@@ -34,9 +34,9 @@ public class Libro {
         this.paginas.add(p);
     }
 
-    private ArrayList<Pagina> getPaginas(){
-        return this.paginas;
-    }
+    // private ArrayList<Pagina> getPaginas(){
+    //     return this.paginas;
+    // }
 
     @Override
     public String toString() {

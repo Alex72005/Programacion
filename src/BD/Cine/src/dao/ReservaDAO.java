@@ -144,22 +144,22 @@ public class ReservaDAO {
 
     
     // si la esta esta ocupada en ese dia y hora
-    private boolean estaSalaOcupada(int idSala, Date fecha, Time hora) {
-        String sql = "SELECT COUNT(*) FROM Reservas WHERE ID_Sala = ? AND Fecha = ? AND Hora = ?";
-        try (Connection conn = ConexionBD.conectar();
-                PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, idSala);
-            stmt.setDate(2, fecha);
-            stmt.setTime(3, hora);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                return rs.getInt(1) > 0;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+    // private boolean estaSalaOcupada(int idSala, Date fecha, Time hora) {
+    //     String sql = "SELECT COUNT(*) FROM Reservas WHERE ID_Sala = ? AND Fecha = ? AND Hora = ?";
+    //     try (Connection conn = ConexionBD.conectar();
+    //             PreparedStatement stmt = conn.prepareStatement(sql)) {
+    //         stmt.setInt(1, idSala);
+    //         stmt.setDate(2, fecha);
+    //         stmt.setTime(3, hora);
+    //         ResultSet rs = stmt.executeQuery();
+    //         if (rs.next()) {
+    //             return rs.getInt(1) > 0;
+    //         }
+    //     } catch (SQLException e) {
+    //         e.printStackTrace();
+    //     }
+    //     return false;
+    // }
 
     // Buscar las reservas de una fecha concreta
     public List<Reserva> buscarPorFecha(Date fecha) {
@@ -664,30 +664,30 @@ public class ReservaDAO {
     }
 
     // No haya reservas duplicadas
-    private boolean reservaDuplicada(Reserva r) {
-        String sql = """
-                    SELECT COUNT(*) FROM Reservas
-                    WHERE ID_Pelicula = ? AND ID_Sala = ? AND Fecha = ? AND Hora = ? AND Nombre_Cliente = ?
-                """;
+    // private boolean reservaDuplicada(Reserva r) {
+    //     String sql = """
+    //                 SELECT COUNT(*) FROM Reservas
+    //                 WHERE ID_Pelicula = ? AND ID_Sala = ? AND Fecha = ? AND Hora = ? AND Nombre_Cliente = ?
+    //             """;
 
-        try (Connection conn = ConexionBD.conectar();
-                PreparedStatement stmt = conn.prepareStatement(sql)) {
+    //     try (Connection conn = ConexionBD.conectar();
+    //             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, r.getPelicula().getId());
-            stmt.setInt(2, r.getSala().getId());
-            stmt.setDate(3, r.getFecha());
-            stmt.setTime(4, r.getHora());
-            stmt.setString(5, r.getNombreCliente());
+    //         stmt.setInt(1, r.getPelicula().getId());
+    //         stmt.setInt(2, r.getSala().getId());
+    //         stmt.setDate(3, r.getFecha());
+    //         stmt.setTime(4, r.getHora());
+    //         stmt.setString(5, r.getNombreCliente());
 
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next())
-                return rs.getInt(1) > 0;
+    //         ResultSet rs = stmt.executeQuery();
+    //         if (rs.next())
+    //             return rs.getInt(1) > 0;
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+    //     } catch (SQLException e) {
+    //         e.printStackTrace();
+    //     }
+    //     return false;
+    // }
 
     //muestra las horas ocupadas de una sala un dia
     public List<Time> obtenerHorasOcupadas(int idSala, Date fecha) {

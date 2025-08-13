@@ -37,8 +37,8 @@ public class Componentes {
 
         // ⬇ Lista desplegable
         
-        String[] paises = { "España", "Francia", "Italia" };
-        JComboBox<String> comboBox = new JComboBox<>(paises);
+        // String[] paises = { "España", "Francia", "Italia" };
+        // JComboBox<String> comboBox = new JComboBox<>(paises);
         
 
         //  Lista múltiple
@@ -46,7 +46,7 @@ public class Componentes {
         String[] lenguajes = { "Java", "Python", "C++", "JavaScript" };
         JList<String> listaMultiple = new JList<>(lenguajes);
         listaMultiple.setVisibleRowCount(3);
-        JScrollPane scrollLista = new JScrollPane(listaMultiple);
+        // JScrollPane scrollLista = new JScrollPane(listaMultiple);
         
         //  Tabla (JTable)
         
@@ -57,7 +57,7 @@ public class Componentes {
         };
         String[] columnas = { "ID", "Nombre", "Nota" };
         JTable tabla = new JTable(datos, columnas);
-        JScrollPane scrollTabla = new JScrollPane(tabla);
+        // JScrollPane scrollTabla = new JScrollPane(tabla);
         tabla.setPreferredScrollableViewportSize(new Dimension(400, 70));
         
         //  Ejemplo para ir comentando/descomentando en clase
