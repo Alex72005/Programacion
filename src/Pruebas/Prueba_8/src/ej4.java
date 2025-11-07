@@ -18,7 +18,7 @@ public class ej4 {
 
             if (contAlumnos != 1) {
                 String idAlumno = "";
-                String emailAlumno = "";
+                // String emailAlumno = "";
 
                 idAlumno = alumnoString.charAt(0) + "" + alumnoString.charAt(1);
 
@@ -37,7 +37,7 @@ public class ej4 {
                         System.out.println(idAlumnoNotas);
 
                         if (idAlumno.equals(idAlumnoNotas)) {
-                            int nota1 = Integer.parseInt(notasString.charAt(4) + "" + notasString.charAt(5));
+                            // int nota1 = Integer.parseInt(notasString.charAt(4) + "" + notasString.charAt(5));
 
                             double media = 9.55;
 
@@ -49,9 +49,11 @@ public class ej4 {
                         }
                     }
                 }
-
+                brNotas.close();
             }
+    
         }
         fwMedias.close();
+        brAlumnos.close();
     }
 }

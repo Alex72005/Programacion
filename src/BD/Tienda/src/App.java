@@ -1,8 +1,10 @@
 package BD.Tienda.src;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+//javac -cp "lib/mysql-connector-j-9.3.0.jar" -d ../../../bin src/*.java   
+//java "-Dfile.encoding=UTF-8" -cp "lib/mysql-connector-j-9.3.0.jar;../../../bin" BD.Tienda.src.App
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -11,7 +13,7 @@ public class App {
         int option = 0;
 
         do {
-            System.out.println("\n--- MENÚ ---");
+            System.out.println("MENÚ");
             System.out.println("1. Registrar Cliente");
             System.out.println("2. Listar Clientes");
             System.out.println("3. Actualizar Cliente");
@@ -25,7 +27,7 @@ public class App {
             try {
                 switch (option) {
                     case 1:
-                        Cliente nuevo = new Cliente();
+                        Cliente nuevo = new Cliente();  
                         System.out.print("Nombre: ");
                         nuevo.setNombre(sc.nextLine());
                         System.out.print("Apellidos: ");
@@ -38,7 +40,7 @@ public class App {
                         System.out.println("Cliente registrado.");
                         break;
                     case 2:
-                        List<Cliente> clientes = new ArrayList<Cliente>();
+                        List<Cliente> clientes = cdao.listar();
                         System.out.println("Lista de clientes");
                         for (Cliente c : clientes) {
                             System.out.println(c.getId() + ": " + c.getNombre() + " " + c.getApellidos() + ", "
@@ -77,7 +79,7 @@ public class App {
                         } else {
                             System.out.println("Resultados de la búsqueda: ");
                             for (Cliente c : resultados) {
-                                System.out.println(c.getId() + ": " + c.getNombre() + " " + c.getApellidos());
+                                System.out.println(c.getId() + ": " + c.getNombre() + " " + c.getApellidos() + ", " + c.getEmail() + ", " + c.getTelefono());
                             }
                         }
                         break;

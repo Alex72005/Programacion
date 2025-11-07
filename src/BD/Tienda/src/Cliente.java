@@ -15,6 +15,13 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    public Cliente(String nombre, String apellidos, String email, String telefono) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.telefono = telefono;
+    }
+
     public Cliente() {
     }
 

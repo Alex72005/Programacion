@@ -18,9 +18,10 @@ public class ClienteDAO {
 
     public List<Cliente> listar() throws SQLException{
         List<Cliente> listaClientes = new ArrayList<Cliente>();
-        Connection con = ConexionBD.conectar(); 
-        Statement st = con.createStatement(); // Objeto para ejecutar la consulta
-        ResultSet rs = st.executeQuery("SELECT * FROM Clientes"); //La ejecuto y guardo 
+        Connection con = ConexionBD.conectar();  
+        String sql = "SELECT * FROM Clientes";
+        PreparedStatement ps = con.prepareStatement(sql); 
+        ResultSet rs = ps.executeQuery(); 
 
         while (rs.next()) {
             Cliente c = new Cliente();
@@ -38,7 +39,7 @@ public class ClienteDAO {
 
     public void actualizar(Cliente c) throws SQLException{
         Connection con = ConexionBD.conectar(); 
-        String sql = "UPDATE Clientes SET nombre=?, apellidos=?, email=?, telefono=?";
+        String sql = "UPDATE Clientes SET nombre=?, apellidos=?, email=?, telefono=? WHERE ID=?";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setString(1, c.getNombre());
         ps.setString(2, c.getApellidos());
