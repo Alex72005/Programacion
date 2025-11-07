@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pacientes>
+    <paciente>
+        <habitacion>10</habitacion>
+        <cama>1</cama>
+        <nombre>Cesar</nombre>
+        <apellidos>Gallego</apellidos>
+        <dieta>Celiaco</dieta>
+    </paciente>
+    <paciente>
+        <habitacion>10</habitacion>
+        <cama>2</cama>
+        <nombre>Alberto</nombre>
+        <apellidos>Marcos</apellidos>
+        <dieta>Intolerante a la Lactosa</dieta>
+    </paciente>
+    <paciente>
+        <habitacion>11</habitacion>
+        <cama>1</cama>
+        <nombre>Victor</nombre>
+        <apellidos>Romero</apellidos>
+        <dieta>Diabético</dieta>
+    </paciente>
+    <paciente>
+        <habitacion>11</habitacion>
+        <cama>2</cama>
+        <nombre>Alvaro</nombre>
+        <apellidos>Villalba</apellidos>
+        <dieta>Vegano</dieta>
+    </paciente>
+    <paciente>
+        <habitacion>12</habitacion>
+        <cama>1</cama>
+        <nombre>Rafa</nombre>
+        <apellidos>Luque</apellidos>
+        <dieta>Sin restricciones</dieta>
+    </paciente>
+</pacientes>
