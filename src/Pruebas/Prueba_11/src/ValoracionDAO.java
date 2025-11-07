@@ -22,7 +22,7 @@ public class ValoracionDAO {
     public ArrayList<Contenido> mostrarSinValoracion() throws SQLException {
         ArrayList<Contenido> sinValoracion = new ArrayList<>();
         Connection con = ConexionBD.conectar();
-        String sql = "SELECT * FROM Contenido c JOIN Valoracion v on c.id = v.id_contenido where v.id_contenido is NULL";
+        String sql = "SELECT * FROM Contenido c LEFT JOIN Valoracion v on c.id = v.id_contenido where v.id_contenido is NULL";
         PreparedStatement ps = con.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
 
